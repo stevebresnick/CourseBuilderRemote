@@ -31,6 +31,31 @@ $(document).ready(function() {
             $('.brightcove_field').show();
         }
     });
+    
+    //Resource Popovers
+    $(function ()  
+{
+  $('.resourcedescription').popover(
+  {
+     trigger: 'hover',
+     html: true,
+     placement: 'right',
+  });
+});
+
+/*
+$('#htmlsourcecode').popover(
+  {
+     trigger: 'click',
+     html: true,
+     placement: 'left',
+  });*/
+  
+  $('#htmlsourcecode').click( function(){
+     $('#htmlsource').toggle();
+  });
+    
+
 });
 /* 
  * To change this license header, choose License Headers in Project Properties.
