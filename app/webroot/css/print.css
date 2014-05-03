@@ -1,0 +1,59 @@
+@media print {
+
+    header nav, footer {
+        display: none;
+    }
+
+    @page {
+        margin-top: 0.9in;
+        margin-bottom: 0.9in;
+    }
+
+    @page :left {
+        margin: 0.5cm;
+    }
+
+    @page :right {
+        margin: 0.8cm;
+    }
+
+    body{ 
+        background-color: #ffffff; 
+        background-image: none; 
+        color: #000000;
+        font: 10pt Georgia, "Times New Roman", Times, serif;
+        line-height: 1.3;
+    }
+    #sidenav{ 
+        display: none;
+    }
+
+    #sessionoutline{
+        display:none;
+    }
+
+    #printarea{
+        display: block;
+    }
+    
+    .printblock{
+        margin: 30px 5px 15px 5px;
+    }
+    
+    .activities, .resources {
+        
+        margin-top: 60px;
+        border-top: 1px solid #000000;
+    }
+    
+    .activity, .resource {
+        margin-top: 50px;
+        padding-top: 40px;
+        border-top: #0f7864 1px dashed;
+    }
+    
+    .dl-horizontal{
+        margin-top: 10px;
+    }
+}
+

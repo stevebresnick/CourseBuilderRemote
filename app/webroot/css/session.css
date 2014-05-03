@@ -1,0 +1,56 @@
+.formrows {
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+.formtitle{
+    margin-left: 30px;
+}
+#sessionnumber {
+    width:50px;
+}
+#sessiontitle {
+    width:100%;
+    min-width:100%;
+    max-width:100%;
+    margin-left: -15px;
+}
+.sessionintro{
+    width:100%;
+    min-width:100%;
+    max-width:100%;
+    float:left;
+}
+#activityhead{
+    padding: 10px 15px 10px 15px;
+}
+#activitysidebar{
+    border-right: 1px solid #444;
+}
+#activityprocedure{
+    padding:10px 10px 10px 10px;
+}
+#steps{
+    margin: 15px 0px 10px 15px;
+}
+#steps li, #goal{
+    margin: 5px 0px 5px 0px;
+}
+#addagoal{
+    float:right;
+}
+#coursetitle{
+    text-align: center;
+}
+.topoffset{
+    height: 60px;
+}
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 6, 2014, 10:29:12 AM
+    Author     : StephenB
+*/
+

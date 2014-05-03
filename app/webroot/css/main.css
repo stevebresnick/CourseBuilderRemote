@@ -1,0 +1,107 @@
+body {font-family: sans-serif;}
+h1 {text-align: center;}
+.form h1{border-bottom: 1px solid #58a796; padding:0px 0px 20px 0px;}
+.form
+        {
+        border: 1px solid #58a796; 
+        background: #fffbd9; 
+        padding: 10px 15px 10px 15px; 
+        margin-left: auto; 
+        margin-right: auto; 
+        width:800px;
+        }
+form {width: 800px;}
+#introduction, #overview h1{color:#58a796;}
+input, textArea {
+    margin: 10px 5px 10px 5px;
+    padding:9px;
+    border:solid 1px #58a796;
+    outline: 0;
+    font: normal 14px/100% Verdana, Tahoma, sans-serif;
+    line-height: 1.2em;
+    //width:680px;
+    background:#ffffff;
+    resize: none;
+   box-shadow:         inset 0 0 5px #ccffff;
+       -moz-box-shadow:    inset 0 0 10px #ccffff;
+   -webkit-box-shadow: inset 0 0 10px #ccffff;
+    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #000000), to(#FFFFFF));  
+    background: -moz-linear-gradient(TOP, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+}
+.form label {
+        margin-left:10px;
+        line-height: 1.2em;
+        color:#58a796;
+        }
+        .submit input, button {
+            width:auto;
+            padding: 9px 15px;
+            background: #8d2422;
+-webkit-box-shadow: 3px 3px -1px 2px rgba(0,0,0,.5);
+-moz-box-shadow: 3px 3px -1px 2px rgba(0,0,0,.5);
+box-shadow: 3px 3px 2px -1px rgba(0,0,0,.5);
+            border: 1px solid #58a796;
+            font-size: 14px;
+            color:#ffffff;
+        }
+:focus{
+    -moz-box-shadow:    0px 0px 10px lightblue;
+-webkit-box-shadow: 0px 0px 10px lightblue;
+box-shadow:         0px 0px 10px lightblue;
+    
+};
+textArea {
+    width: 765px;
+}
+.sessionnumber, .sessiontitle,.sessionintro {
+    //height:4.0em;
+    float: left;
+    vertical-align: middle;
+    padding: 5px 10px 0px 0px;
+    margin: 5px 10px 0px 5px;}
+
+.sessionnumber {//border-right:3px solid #58a796; 
+               }
+#sessionnumber {
+    width:50px;
+}
+.sessiontitle {
+width:540px;
+margin-right: -10px;
+padding-right: -30px;}
+#sessiontitle {
+    width:420px;
+margin-right: -20px;}
+
+.sessionintro, .sessionquote{
+    margin-top: 25px;
+    padding: 25px 0px 0px 0px;
+    border-top: 1px solid #58a796;
+    width:100%;
+    float:left;
+}
+#sessionintro {
+}
+.quotespeaker, .quoteyear {
+    float:left;
+}
+.quotespeaker{width:75%;}
+#quotespeaker{width:550px;}
+.quoteyear{width:21%; padding-left: 20px;}
+#quoteyear{width:100px;}
+#learninggoals h1{color:white;}
+.goals {background:rgba(6, 154, 163, 0.6)}
+.goals h1{color: white;}
+.goal {margin:10px 0px 5px 20px;border-bottom: 1px solid white;padding-bottom: 5px;}
+#goal {width:650px;}
+
+        /*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 19, 2013, 9:40:27 AM
+    Author     : StephenB
+*/
+
