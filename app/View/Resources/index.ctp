@@ -1,7 +1,4 @@
 <?php $this->start('resources'); ?>
-<pre>
-<?php //print_r($resources);?>
-</pre>
 <div class="resources index">
     <table cellpadding="5" cellspacing="20" class="table table-bordered">
         <tr>
@@ -41,18 +38,18 @@
                                 <td>
                                     <?php if(!empty($resource['Course'])){
                                         foreach ($resource['Course'] as $courseresource){
-                                            echo $courseresource['title'];
+                                            echo $this->Html->link($courseresource['title'], array('controller'=>'courses','action'=>'view', $courseresource['id']));
                                         }
                                     } elseif(!empty($resource['Section'])){
                                         foreach ($resource['Section'] as $section){
-                                            echo $section['Course']['title'].'<br/>';
-                                            echo 'Session: '. $section['number'];
+                                            echo $this->Html->link($section['Course']['title'], array('controller'=>'courses', 'action'=>'view', $section['Course']['id'])).'<br/>';
+                                            echo $this->Html->link('Session: '. $section['number'], array('controller'=>'sections', 'action'=>'view', $section['id']));
                                         }
                                     } elseif (!empty($resource['Activity'])){
                                         foreach ($resource['Activity'] as $activity){
-                                            echo $course[$activity['Section']['course_id']].'<br/>';
-                                            echo 'Session '. $activity['Section']['number'].'<br/>';
-                                            echo 'Activity: '. $activity['id'].'<br/>';
+                                            echo $this->Html->link($course[$activity['Section']['course_id']], array('controller'=>'courses', 'action'=>'view', $activity['Section']['course_id'])).'<br/>';
+                                            echo $this->Html->link('Session '. $activity['Section']['number'], array('controller'=>'sections', 'action'=>'view', $activity['Section']['id'])).'<br/>';
+                                            echo $this->Html->link('Activity: '. $activity['id'], array('controller'=>'activities', 'action'=>'view', $activity['id'])).'<br/>';
                                         }
                                     } else {
                                         echo 'none';
