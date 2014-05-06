@@ -54,14 +54,13 @@
     <div id="tabs-2">
         <p></p>
         <hr style="width: 100%; height: 2px;" />
-        <p><span style="font-weight: bold; font-size: large;" size="4"><span style="color: #0000ff;"><br /><span style="font-family: arial,helvetica,sans-serif; color: #000099; font-size: medium;" size="3">[PLACEHOLDER FOR OPTIONAL SECONDARY SESSION QUOTE]</span></span></span><span style="font-family: arial,helvetica,sans-serif; font-size: medium;" size="3"> <span style="font-weight: bold;">--[PLACEHOLDER FOR SECONDARY SESSION QUOTE SPEAKER]</span></span><span style="font-size: large;" size="4"><span style="font-family: arial,helvetica,sans-serif; font-weight: bold; font-size: medium;" size="3"><span style="color: #0000ff;"></span></span><br /></span></p>
         <div style="margin-left: 200px;"></div>
         <hr style="width: 100%; height: 2px;" />
         <table class="choicesshadow" style="margin: 10px 20px; width: 315px;" cellpadding="10" cellspacing="10" align="right" border="0">
             <tbody>
                 <tr style="background: #58a796;">
                     <td>
-                        <h2 style="text-align: center;"><span style="font-size: medium;"><img src="http://stevebresnick.com/facing_history/coursebuilder/app/webroot/img/icons/icon11.png" style="margin-left: 10px; margin-right: 10px; vertical-align: middle; float: left;" height="41" width="40" /><span style="color: #ffffff;">[PLACEHOLDER FOR SESSION VIDEO]</span></span></h2>
+                        <h2 style="text-align: center;"><span style="font-size: medium;"><img src="http://stevebresnick.com/facing_history/coursebuilder/app/webroot/img/icons/icon11.png" style="margin-left: 10px; margin-right: 10px; vertical-align: middle; float: left;" height="41" width="40" /><span style="color: #ffffff;">Session Video</span></span></h2>
                     </td>
                 </tr>
                 <tr style="background: #fffbd9;"> <!---START VIDEO WRAPPER------>
