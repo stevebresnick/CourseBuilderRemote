@@ -65,22 +65,7 @@
                 </tr>
                 <tr style="background: #fffbd9;"> <!---START VIDEO WRAPPER------>
                     <td><!-- Start of Brightcove Player -->
-                        <div style="display: none;"></div>
-                        <!--
-                        By use of this code snippet, I agree to the Brightcove Publisher T and C 
-                        found at https://accounts.brightcove.com/en/terms-and-conditions/. 
-                        -->
-                        <script src="http://admin.brightcove.com/js/BrightcoveExperiences.js" type="text/javascript"></script>
-                        <object id="myExperience2686042344001" class="BrightcoveExperience"><param name="bgcolor" value="#FFFFFF" /><param name="width" value="310" /><param name="height" value="174" /><param name="playerID" value="2210701511001" /><param name="playerKey" value="AQ~~,AAABYEdBaAk~,1dGnVytVBSyAcRv2ttkHUilGtqLWHavw" /><param name="isVid" value="true" /><param name="isUI" value="true" /><param name="dynamicStreaming" value="true" /><param name="@videoPlayer" value="2686042344001" /></object> <!-- 
-                        This script tag will cause the Brightcove Players defined above it to be created as soon
-                        as the line is read by the browser. If you wish to have the player instantiated only after
-                        the rest of the HTML is processed and the page load is complete, remove the line.
-                        -->
-                        <script type="text/javascript">// <![CDATA[
-    brightcove.createExperiences();
-    // ]]></script>
-                        <!-- End of Brightcove Player -->
-                        <p style="text-align: center;"><span style="font-size: x-small;"><em>Facing History Scholar Reflection: Scholar Paul Bookbinder providers historical contexts for this session on the Holocaust</em></span></p>
+                        <?php echo $section['Section']['video'];?>
                     </td>
                 </tr>
             </tbody>

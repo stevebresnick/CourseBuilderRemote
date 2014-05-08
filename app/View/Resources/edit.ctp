@@ -27,7 +27,7 @@ else {
 <?php $this->start('resources');?>
 <div class="panel panel-info">
     <div class="panel-body">
-<?php echo $this->Form->create('Resource');?>
+<?php echo $this->Form->create('Resource', array('class'=>'form'));?>
 	<fieldset>
 		<?php if (isset($activityid)){
                 echo '<legend class="text-info">'.__('Edit Activity Resource').'</legend>';
@@ -54,7 +54,9 @@ else {
                 };
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit'));?>
+        <div class="col-md-10"></div>
+      <?php  echo $this->Html->div('col-md-1', $this->Form->end(array('label'=>'Submit', 'class'=>'form-control btn btn-sm btn-info btn-block')));?>
+      <?php  echo $this->Html->div('col-md-1', $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Resource.id')), array('class'=>'form-control btn btn-danger btn-sm btn-block'), __('Are you sure you want to delete this resource?')));?>
     </div>
 </div>
 <?php $this->end(); ?>

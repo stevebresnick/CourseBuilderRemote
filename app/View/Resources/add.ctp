@@ -30,17 +30,21 @@ if (isset($activityid)){
                 };?>
 		
 	<?php
+		echo $this->Form->input('id');
 		echo $this->Html->div('col-md-5', $this->Form->input('title', array('class'=>'form-control')));
 		echo $this->Html->div('col-md-2', $this->Form->input('type_id', array('class'=>'form-control select_resource_type', 'options'=>array($types))));
 		echo $this->Html->div('col-md-3', $this->Form->input('path', array('class'=>'form-control', 'label'=>'URL For This Resource')));
                 echo $this->Html->div('col-md-2 brightcove_field', $this->Form->input('brightcove', array('class'=>'form-control', 'label'=>'BrightcoveID', 'placeholder'=>'**Optional**')));
-		echo $this->Html->div('col-md-7', $this->Form->input('description', array('class'=>'form-control')));
-		echo $this->Html->div('col-md-5', $this->Form->input('note', array('class'=>'form-control', 'label'=>'Notes About This Resource')));
-                if (isset($activityid)){
+		echo $this->Html->div('col-md-4', $this->Form->input('description', array('class'=>'form-control')));
+		echo $this->Html->div('col-md-4', $this->Form->input('note', array('class'=>'form-control', 'label'=>'Notes About This Resource')));
+                echo $this->Html->div('col-md-4', $this->Form->input('html', array('class'=>'form-control', 'label'=>'HTML Source Code')));
+		if (isset($activityid)){
                     echo $this->Form->hidden('Activity', array('value'=>$activities['Activity']['id']));
-                } else {
+                } elseif (isset($sectionid)) {
                     echo $this->Form->hidden('Section', array('value'=>$activities['Section']['id']));
-                }
+                } else {
+                    echo 'add to session or course';
+                };
 	?>
 	</fieldset>
 <div class="col-md-11"></div>

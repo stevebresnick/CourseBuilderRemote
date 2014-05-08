@@ -28,7 +28,8 @@
                 <div class="col-md-12">
         <?php   echo $this->Html->div('col-md-12 form-group', $this->Form->input('introbrief', array('class'=>'form-control', 'rows'=>2)));
                 echo $this->Html->div('col-md-12 form-group', $this->Form->input('introdetailed', array('class'=>'form-control')));
-                echo $this->Html->div('col-md-12 form-group', $this->Form->input('url', array('class'=>'form-control', 'label'=>'URL Where the Activity Will Reside')));?>        
+                echo $this->Html->div('col-md-12 form-group', $this->Form->input('url', array('class'=>'form-control', 'label'=>'URL Where the Activity Will Reside')));
+                echo $this->Html->div('col-md-12 form-group', $this->Form->input('html', array('class'=>'form-control', 'label'=>'HTML Source Code')));?>        
                 </div>
 	</fieldset>
 <div class="col-md-11"></div>
