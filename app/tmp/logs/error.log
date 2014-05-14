@@ -33045,3 +33045,278 @@ Stack Trace:
 #1 /media/sf_sandbox/TexasHHB/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ResourcesController), Object(CakeRequest), Object(CakeResponse))
 #2 /media/sf_sandbox/TexasHHB/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2014-05-14 14:51:50 Error: [MissingActionException] Action PagesController::home() could not be found.
+Exception Attributes: array (
+  'controller' => 'PagesController',
+  'action' => 'home',
+)
+Request URL: /CourseBuilderRemote/
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#2 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-05-14 14:52:07 Error: [MissingActionException] Action PagesController::home() could not be found.
+Exception Attributes: array (
+  'controller' => 'PagesController',
+  'action' => 'home',
+)
+Request URL: /CourseBuilderRemote/
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#2 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-05-14 14:55:44 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/Assets/css/bootstrap.css
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:44 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/ico/favicon.png
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:45 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-modal.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:45 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-alert.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:45 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-transition.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:45 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/Assets/js/jquery.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:45 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-dropdown.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:46 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-scrollspy.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:46 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-tab.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:46 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-tooltip.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:47 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-popover.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:47 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-collapse.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:47 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-button.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:47 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-typeahead.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:47 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-carousel.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:47 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-transition.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:48 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-alert.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:48 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-modal.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:49 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-dropdown.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:49 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-scrollspy.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:49 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-tab.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:50 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-tooltip.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:50 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-popover.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:50 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-button.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:51 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-collapse.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:51 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-carousel.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 14:55:51 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderRemote/assets/js/bootstrap-typeahead.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-14 16:03:44 Error: Fatal Error (4): syntax error, unexpected '=' in [/media/sf_sandbox/CourseBuilderRemote/app/View/Activities/edit.ctp, line 13]
+2014-05-14 16:03:45 Error: [FatalErrorException] syntax error, unexpected '='
+Request URL: /CourseBuilderRemote/activities/edit/30
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/media/sf_sandb...', 13)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/media/sf_sandb...', 13, Array)
+#2 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/media/sf_sandb...', 13, Array)
+#3 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

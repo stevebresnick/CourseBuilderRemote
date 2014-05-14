@@ -72,6 +72,7 @@ public function initDB() {
     $this->Acl->allow($group, 'controllers/Overviews/view');
     
     $this->Acl->allow($group, 'controllers/Resources');
+    $this->Acl->allow($group, 'controllers/Resources/add');
     $this->Acl->allow($group, 'controllers/Resources/addto');
     
     $this->Acl->allow($group, 'controllers/Sections/add');

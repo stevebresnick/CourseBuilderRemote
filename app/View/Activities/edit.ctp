@@ -9,6 +9,12 @@
 <?php $this->start('navigation'); ?>
 <?php echo $this->Html->div('col-md-12', $this->Html->link('Back to Course', array('controller' => 'courses', 'action' => 'view', $activities[0]['Section']['Course']['id']), array('class' => 'btn btn-md btn-success btn-block'))); ?>
 <?php echo $this->Html->div('col-md-12', $this->Html->link(__('Back to Activity'), array('action' => 'view', $activities[0]['Activity']['id']), array('class' => 'btn btn-md btn-warning btn-block'))); ?>
+
+<?php if($activities[0]['Section']['Course']['master'] !== '1' || $user['Group']['name'] == 'Admin'):?>
+<?php echo $this->Html->div('col-md-12', $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Activity.id')), array('class' => 'btn btn-md btn-danger btn-block'), __('Are you sure you want to delete # %s?', $this->Form->value('Activity.id')))); ?>
+<?php endif;?>
+
+
 <?php $this->end(); ?>
 
 <?php $this->start('activities');?>

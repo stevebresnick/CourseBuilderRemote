@@ -35,7 +35,7 @@
 </div>
 <?php $this->end();?>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('Action'); ?></h3>
 	<ul>
 
 		<li><?php echo $this->Html->link(__('List Activities'), array('action' => 'index'));?></li>

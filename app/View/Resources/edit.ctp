@@ -15,14 +15,20 @@
 <?php
 if (isset($activityid)) {
     echo $this->Html->div('col-md-12', $this->Html->link('Back to Activity', array('controller' => 'activities', 'action' => 'view', $activities['Activity']['id']), array('class' => 'btn btn-md btn-info btn-block')));
+    if ($user['Group']['name'] == 'Admin'){
     echo $this->Html->div('col-md-12', $this->Form->postLink('Delete Resource', array('action' => 'delete', $this->Form->value('Resource.id'), $sectionid, $activityid), array('class' => 'btn btn-md btn-danger btn-block'), __('Are you sure you want to delete # %s?', $this->Form->value('Resource.id'))));
+    };
 } elseif (isset($sectionid)) {
     echo $this->Html->div('col-md-12', $this->Html->link('Back to Course', array('controller' => 'courses', 'action' => 'view', $activities['Section']['course_id']), array('class' => 'btn btn-md btn-success btn-block')));
     echo $this->Html->div('col-md-12', $this->Html->link('Back to Session' . $activities['Section']['number'], array('controller' => 'sections', 'action' => 'view', $activities['Section']['id']), array('class' => 'btn btn-md btn-warning btn-block')));
-    echo $this->Html->div('col-md-12', $this->Form->postLink('Delete Resource', array('action' => 'delete', $this->Form->value('Resource.id'), $sectionid), array('class' => 'btn btn-md btn-danger btn-block'), __('Are you sure you want to delete # %s?', $this->Form->value('Resource.id'))));   
+if ($user['Group']['name'] == 'Admin'){
+    echo $this->Html->div('col-md-12', $this->Form->postLink('Delete Resource', array('action' => 'delete', $this->Form->value('Resource.id'), $sectionid), array('class' => 'btn btn-md btn-danger btn-block'), __('Are you sure you want to delete # %s?', $this->Form->value('Resource.id'))));
+};
 } else {
     echo $this->Html->div('col-md-12', $this->Html->link('Back to Resources', array('controller' => 'resources', 'action' => 'index'), array('class' => 'btn btn-md btn-info btn-block')));
+if ($user['Group']['name'] == 'Admin'){    
     echo $this->Html->div('col-md-12', $this->Form->postLink('Delete Resource', array('action' => 'delete', $this->Form->value('Resource.id'), 'redirect'=>'index'), array('class' => 'btn btn-md btn-danger btn-block'), __('Are you sure you want to delete # %s?', $this->Form->value('Resource.id'))));
+};
 };
 ?>
 <?php $this->end(); ?>

@@ -70,7 +70,7 @@
                                 <?php echo $this->Html->image('icons/icon' . $resource['type_id'] . '.png', array('width' => '30px', 'height' => '30px')); ?>
                             </div>
                             <div class="col-md-6">
-                                <?php echo $this->Html->link($resource['title'], array('controller' => 'resources', 'action' => 'view', $resource['id'])); ?>
+                                <?php echo $this->Html->link($resource['title'], array('controller' => 'resources', 'action' => 'view', $resource['id'], 1)); ?>
                             </div>
                             <?php if($activity['Section']['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
                             <div class="col-md-4">

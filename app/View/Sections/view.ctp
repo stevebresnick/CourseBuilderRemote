@@ -82,9 +82,12 @@ foreach ($section['Activity'] as $activities) {
                         echo ': ' . h($section['Section']['title']);
                         ?></strong></h4>
                 <p><?php echo h($section['Section']['intro']); ?></p>
-                <?php if($section['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
-                <p><?php echo $this->Html->div('col-md-12', $this->Html->link('Edit', array('controller' => 'sections', 'action' => 'edit', $section['Section']['id']), array('class' => 'btn btn-sm btn-info pull-right'))); ?></p>
-                <?php endif;?>
+                <?php if ($section['Course']['master'] == null || $user['Group']['name'] == 'Admin'): ?>
+                    <p><?php echo $this->Html->div('col-md-12', $this->Html->link('Edit', array('controller' => 'sections', 'action' => 'edit', $section['Section']['id']), array('class' => 'btn btn-sm btn-info pull-right'))); ?></p>
+                <?php endif; ?>
+                <?php if ($section['Course']['master'] == '1' && $user['Group']['name'] !== 'Admin'): ?>
+                    <p><?php echo $this->Html->div('col-md-12', $this->Html->link('', array('controller' => 'sections', 'action' => 'view', $section['Section']['id']), array('class' => 'btn btn-sm btn-default pull-right'))); ?></p>
+                <?php endif; ?>
             </div>
         </div>
         <div class="col-md-12">
@@ -97,9 +100,12 @@ foreach ($section['Activity'] as $activities) {
                                 <a data-toggle="collapse" data-parent="#accordion" href="#AddOverview">
                                     Session Overview
                                 </a>
-                                <?php if($section['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
-                                <?php echo $this->Html->link(__('Add Paragraph'), array('controller' => 'overviews', 'action' => 'add', $section['Section']['id']), array('class' => 'btn btn-default btn-xs pull-right')); ?>
-                                <?php endif;?>
+                                <?php if ($section['Course']['master'] == '1' && $user['Group']['name'] == 'Admin'): ?>
+                                    <?php echo $this->Html->link(__('Add Paragraph'), array('controller' => 'overviews', 'action' => 'add', $section['Section']['id']), array('class' => 'btn btn-default btn-xs pull-right')); ?>
+                                <?php endif; ?>
+                                <?php if ($section['Course']['master'] == null): ?>
+                                    <?php echo $this->Html->link(__('Add Paragraph'), array('controller' => 'overviews', 'action' => 'add', $section['Section']['id']), array('class' => 'btn btn-default btn-xs pull-right')); ?>                               
+                                <?php endif; ?>
                             </h4>
                         </div>
                         <div id="AddOverview" class="panel-collapse collapse">
@@ -109,13 +115,17 @@ foreach ($section['Activity'] as $activities) {
                                         <div class="col-md-10">
                                             <p><?php echo $overview['paragraph']; ?></p>
                                         </div>
-                                        <?php if($section['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
                                         <div class="col-md-2">
-                                            <?php echo $this->Html->link(__('View'), array('controller' => 'overviews', 'action' => 'view', $overview['id']), array('class' => 'btn btn-xs btn-success btn-block')); ?>    
-                                            <?php echo $this->Html->link(__('Edit'), array('controller' => 'overviews', 'action' => 'edit', $overview['id'], $section['Section']['id']), array('class' => 'btn btn-xs btn-warning btn-block')); ?>
-                                            <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'overviews', 'action' => 'delete', $overview['id'], $section['Section']['id']), array('class' => 'btn btn-xs btn-danger btn-block'), __('Are you sure you want to delete this overview paragraph?')); ?>
+                                            <?php echo $this->Html->link(__('View'), array('controller' => 'overviews', 'action' => 'view', $overview['id']), array('class' => 'btn btn-xs btn-success btn-block')); ?>
+                                            <?php if ($section['Course']['master'] == '1' && $user['Group']['name'] == 'Admin'): ?>
+                                                <?php echo $this->Html->link(__('Edit'), array('controller' => 'overviews', 'action' => 'edit', $overview['id'], $section['Section']['id']), array('class' => 'btn btn-xs btn-warning btn-block')); ?>
+                                                <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'overviews', 'action' => 'delete', $overview['id'], $section['Section']['id']), array('class' => 'btn btn-xs btn-danger btn-block'), __('Are you sure you want to delete this overview paragraph?')); ?>
+                                            <?php endif; ?>
+                                            <?php if ($section['Course']['master'] == null): ?>
+                                                <?php echo $this->Html->link(__('Edit'), array('controller' => 'overviews', 'action' => 'edit', $overview['id'], $section['Section']['id']), array('class' => 'btn btn-xs btn-warning btn-block')); ?>
+                                                <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'overviews', 'action' => 'delete', $overview['id'], $section['Section']['id']), array('class' => 'btn btn-xs btn-danger btn-block'), __('Are you sure you want to delete this overview paragraph?')); ?>                                            
+                                            <?php endif; ?>
                                         </div>
-                                        <?php endif;?>
                                     </div>
                                 <?php endforeach; ?>
                             </div>
@@ -127,8 +137,11 @@ foreach ($section['Activity'] as $activities) {
                                 <a data-toggle="collapse" data-parent="#accordion" href="#AddQuestion">
                                     Essential Questions
                                 </a>
-                                <?php if($section['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
-                                <?php echo $this->Html->link(__('Add Question'), array('controller' => 'essentialQuestions', 'action' => 'add', $section['Section']['id']), array('class' => 'btn btn-default btn-xs pull-right')); ?>
+                                <?php if ($section['Course']['master'] == '1' && $user['Group']['name'] == 'Admin'): ?>
+                                    <?php echo $this->Html->link(__('Add Question'), array('controller' => 'essentialQuestions', 'action' => 'add', $section['Section']['id']), array('class' => 'btn btn-default btn-xs pull-right')); ?>
+                                <?php endif;?>
+                                <?php if ($section['Course']['master'] == null): ?>
+                                    <?php echo $this->Html->link(__('Add Question'), array('controller' => 'essentialQuestions', 'action' => 'add', $section['Section']['id']), array('class' => 'btn btn-default btn-xs pull-right')); ?>                                
                                 <?php endif;?>
                             </h4>
                         </div>
@@ -141,16 +154,24 @@ foreach ($section['Activity'] as $activities) {
                                         <?php endforeach; ?>
                                     </ol>
                                 </div>
-                                <?php if($section['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
                                 <?php if (!empty($section['EssentialQuestion'])): ?>
                                     <div class="col-md-2">
-                                        <?php echo $this->Html->link(__('Edit Questions'), array('controller' => 'essentialQuestions', 'action' => 'edit', $question['id'], $section['Section']['id']), array('class' => 'btn btn-xs btn-warning btn-block')); ?>
+                                        <?php if ($section['Course']['master'] == '1' && $user['Group']['name'] == 'Admin'): ?>
+                                            <?php echo $this->Html->link(__('Edit Questions'), array('controller' => 'essentialQuestions', 'action' => 'edit', $question['id'], $section['Section']['id']), array('class' => 'btn btn-xs btn-warning btn-block')); ?>
+                                        <?php endif;?>
+                                        <?php if ($section['Course']['master'] == null): ?>
+                                            <?php echo $this->Html->link(__('Edit Questions'), array('controller' => 'essentialQuestions', 'action' => 'edit', $question['id'], $section['Section']['id']), array('class' => 'btn btn-xs btn-warning btn-block')); ?>
+                                        <?php endif;?>
                                     </div>
-                                <?php endif; ?>
                                 <?php endif; ?>
                                 <?php if (empty($section['EssentialQuestion'])): ?>
                                     <div class="col-md-2">
+                                <?php if ($section['Course']['master'] == '1' && $user['Group']['name'] == 'Admin'): ?>                                        
                                         <?php echo $this->Html->link(__('Add Questions'), array('controller' => 'essentialQuestions', 'action' => 'add', $section['Section']['id']), array('class' => 'btn btn-xs btn-success btn-block')); ?>
+                                <?php endif;?>
+                                <?php if ($section['Course']['master'] == null): ?>
+                                         <?php echo $this->Html->link(__('Add Questions'), array('controller' => 'essentialQuestions', 'action' => 'add', $section['Section']['id']), array('class' => 'btn btn-xs btn-success btn-block')); ?>
+                                <?php endif;?>
                                     </div>
                                 <?php endif; ?>
                             </div>
@@ -199,8 +220,8 @@ foreach ($section['Activity'] as $activities) {
                                                         </table>
                                                     </div>
                                                 </div>
-                                                <?php if($section['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
                                                 <div class="col-md-2">
+                                                <?php if ($section['Course']['master'] == '1' && $user['Group']['name'] == 'Admin'): ?>
                                                     <div class="col-md-12">
                                                         <?php echo $this->Html->link(__('View'), array('controller' => 'discussions', 'action' => 'view', $discussion['id']), array('class' => 'btn btn-success btn-xs btn-block')); ?>
                                                     </div>
@@ -210,8 +231,19 @@ foreach ($section['Activity'] as $activities) {
                                                     <div class="col-md-12">
                                                         <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'discussions', 'action' => 'delete', $discussion['id']), array('class' => 'btn btn-danger btn-xs btn-block'), null, __('Are you sure you want to delete # %s?', $discussion['id'])); ?>
                                                     </div>
+                                               <?php endif;?>
+                                               <?php if ($section['Course']['master'] == null): ?>
+                                                     <div class="col-md-12">
+                                                        <?php echo $this->Html->link(__('View'), array('controller' => 'discussions', 'action' => 'view', $discussion['id']), array('class' => 'btn btn-success btn-xs btn-block')); ?>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <?php echo $this->Html->link(__('Edit'), array('controller' => 'discussions', 'action' => 'edit', $discussion['id']), array('class' => 'btn btn-warning btn-xs btn-block')); ?>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'discussions', 'action' => 'delete', $discussion['id']), array('class' => 'btn btn-danger btn-xs btn-block'), null, __('Are you sure you want to delete # %s?', $discussion['id'])); ?>
+                                                    </div>                                                   
+                                               <?php endif;?>
                                                 </div>
-                                                <?php endif;?>
                                             </div>
                                         <?php endforeach; ?>
                                     <?php endforeach; ?>
@@ -226,9 +258,12 @@ foreach ($section['Activity'] as $activities) {
                                 <a data-toggle="collapse" data-parent="#accordion" href="#AddResource">
                                     Session Resources (<?php echo count($allresources); ?>)
                                 </a>
-                                <?php if($section['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
+                             <?php if ($section['Course']['master'] == '1' && $user['Group']['name'] == 'Admin'): ?>   
                                 <span class="text-muted"><?php echo $this->Html->link('Add Session Resource', array('controller' => 'resources', 'action' => 'add', $section['Section']['id']), array('class' => 'btn btn-default btn-xs pull-right')); ?></span>
-                                <?php endif;?>
+                            <?php endif;?>
+                            <?php if ($section['Course']['master'] == null): ?>
+                                 <span class="text-muted"><?php echo $this->Html->link('Add Session Resource', array('controller' => 'resources', 'action' => 'add', $section['Section']['id']), array('class' => 'btn btn-default btn-xs pull-right')); ?></span>                               
+                            <?php endif;?>
                             </h4>
                         </div>
                         <div id="AddResource" class="panel-collapse collapse">
@@ -245,20 +280,11 @@ foreach ($section['Activity'] as $activities) {
                                                         <div class="col-md-3">
                                                             <?php echo $this->Html->image('icons/icon' . $resource['type_id'] . '.png', array('width' => '30px', 'class' => 'img-thumbnail')); ?>
                                                         </div>
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-7">
                                                             <?php echo $resource['title']; ?>
                                                         </div>
-                                                        <div class="col-md-3">
-                                                            <?php if($section['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
+                                                        <div class="col-md-2">
                                                             <?php echo $this->Html->link(__('View'), array('controller' => 'resources', 'action' => 'view', $resource['id']), array('class' => 'btn btn-xs btn-warning pull-right')); ?>
-                                                            <?php endif;?>
-                                                            <?php if($section['Course']['master'] == null || $user['Group']['name'] !== 'Admin'):?>
-                                                            <?php echo $this->Html->link(__('View'), array('controller' => 'resources', 'action' => 'view', $resource['id'], 1), array('class' => 'btn btn-xs btn-warning pull-right')); ?>
-                                                            <?php endif;?>
-                                                            <?php if($section['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
-                                                            <?php echo $this->Html->link(__('Remove'), array('controller' => 'resources', 'action' => 'removefrom', $resource['id'], $section['Section']['id']), array('class' => 'btn btn-xs btn-danger pull-right'), __('Are you sure you want to remove this resource?')); ?>
-                                                            <?php endif;?>
-                                                        </div>                                                        
                                                         </div>
                                                     </td>                                                                            
                                                 </tr>
@@ -279,23 +305,14 @@ foreach ($section['Activity'] as $activities) {
                                                 <?php foreach ($activity['Resource'] as $resource): ?>                                               
                                                     <tr>
                                                         <td>
-                                                            <div class="col-md-3">
+                                                            <div class="col-md-2">
                                                                 <?php echo $this->Html->image('icons/icon' . $resource['type_id'] . '.png', array('width' => '30px', 'class' => 'img-thumbnail')); ?>
                                                             </div>
-                                                            <div class="col-md-6">
+                                                            <div class="col-md-8">
                                                                 <?php echo $resource['title']; ?>
                                                             </div>
-                                                            <div class="col-md-3">
-                                                                <?php if($section['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
-                                                                    <?php echo $this->Html->link(__('View'), array('controller' => 'resources', 'action' => 'view', $resource['id']), array('class' => 'btn btn-xs btn-warning pull-right')); ?>
-                                                                <?php endif;?>
-                                                                <?php if($section['Course']['master'] == null || $user['Group']['name'] !== 'Admin'):?>
-                                                                    <?php echo $this->Html->link(__('View'), array('controller' => 'resources', 'action' => 'view', $resource['id'],1), array('class' => 'btn btn-xs btn-warning pull-right')); ?>
-                                                                <?php endif;?>
-                                                                
-                                                                <?php if($section['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
-                                                                    <?php echo $this->Html->link(__('Remove'), array('controller' => 'resources', 'action' => 'removefrom', $resource['id'], $section['Section']['id'], $activity['id']), array('class' => 'btn btn-xs btn-danger pull-right'), __('Are you sure you want to remove this resource?')); ?>
-                                                                <?php endif;?>
+                                                            <div class="col-md-2">
+                                                                <?php echo $this->Html->link(__('View'), array('controller' => 'resources', 'action' => 'view', $resource['id']), array('class' => 'btn btn-xs btn-warning pull-right')); ?>
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -391,7 +408,12 @@ foreach ($section['Activity'] as $activities) {
             (<?php echo count($section['Activity']); ?>)
     </div>
     <div class="col-md-2">
+ <?php if ($section['Course']['master'] == '1' && $user['Group']['name'] == 'Admin'): ?>          
         <?php echo $this->Html->link(__('New Activity'), array('controller' => 'activities', 'action' => 'add', $section['Section']['id']), array('class' => 'btn btn-info btn-xs pull-right')); ?></h4>
+   <?php endif;?>
+  <?php if ($section['Course']['master'] == null): ?>   
+         <?php echo $this->Html->link(__('New Activity'), array('controller' => 'activities', 'action' => 'add', $section['Section']['id']), array('class' => 'btn btn-info btn-xs pull-right')); ?></h4>
+   <?php endif;?>  
     </div>
 </div>
 <div class="panel panel-success panel-body">
@@ -416,22 +438,31 @@ foreach ($section['Activity'] as $activities) {
                                     <div class="col-md-8" style="height:100px; overflow-y: hidden; overflow: scroll;">
                                         <?php echo $activity['introbrief']; ?>
                                     </div>
+  <?php if ($section['Course']['master'] == '1' && $user['Group']['name'] == 'Admin'): ?>                                    
                                     <div class="col-md-2">
                                         <?php echo $this->Html->link(__('View'), array('controller' => 'activities', 'action' => 'view', $activity['id']), array('class' => 'btn btn-success btn-xs btn-block')); ?>                                        
-                                        <?php if($section['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
-                                            <?php echo $this->Html->link(__('Edit'), array('controller' => 'activities', 'action' => 'edit', $activity['id']), array('class' => 'btn btn-warning btn-xs btn-block')); ?>
-                                        <?php endif;?>
-                                                <?php echo $this->Html->link(__('Prvw'), array('controller' => 'activities', 'action' => 'preview', $activity['id']), array('class' => 'btn btn-primary btn-xs btn-block')); ?>
+                                        <?php echo $this->Html->link(__('Edit'), array('controller' => 'activities', 'action' => 'edit', $activity['id']), array('class' => 'btn btn-warning btn-xs btn-block')); ?>
+                                        <?php echo $this->Html->link(__('Prvw'), array('controller' => 'activities', 'action' => 'preview', $activity['id']), array('class' => 'btn btn-primary btn-xs btn-block')); ?>
                                     </div>
+  <?php endif;?>
+  <?php if ($section['Course']['master'] == null || ($section['Course']['master'] == '1' && $user['Group']['name'] !== 'Admin')): ?>
+                                      <div class="col-md-2">
+                                        <?php echo $this->Html->link(__('View'), array('controller' => 'activities', 'action' => 'view', $activity['id']), array('class' => 'btn btn-success btn-xs btn-block')); ?>                                        
+                                        <?php echo $this->Html->link(__('Prvw'), array('controller' => 'activities', 'action' => 'preview', $activity['id']), array('class' => 'btn btn-primary btn-xs btn-block')); ?>
+                                      </div>                                  
+  <?php endif;?>                                 
                                 </div>
                             </div>
 
                             <div class="panel panel-warning">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">Discussions (<?php echo count($activity['Discussion']); ?>)
-                                        <?php if($section['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
-                                        <span class="text-muted"><?php echo $this->Html->link('Add Discussion', array('controller' => 'discussions', 'action' => 'add', $activity['id']), array('class' => 'btn btn-default btn-xs pull-right')); ?></span>                                                                       
-                                        <?php endif;?>
+   <?php if ($section['Course']['master'] == '1' && $user['Group']['name'] == 'Admin'): ?>                                       
+                                        <span class="text-muted"><?php echo $this->Html->link('Add Discussion', array('controller' => 'discussions', 'action' => 'add', $activity['id']), array('class' => 'btn btn-default btn-xs pull-right')); ?></span>
+   <?php endif;?>
+   <?php if ($section['Course']['master'] == null): ?>
+                                         <span class="text-muted"><?php echo $this->Html->link('Add Discussion', array('controller' => 'discussions', 'action' => 'add', $activity['id']), array('class' => 'btn btn-default btn-xs pull-right')); ?></span>                                       
+   <?php endif;?>                                 
                                     </h4>
                                 </div>
                                 <div class="panel-body">
@@ -442,11 +473,14 @@ foreach ($section['Activity'] as $activities) {
                                                     <?php echo $this->Html->image('icons/icon3.png', array('width' => '25px', 'class' => 'pull-left img-thumbnail')); ?>
                                                     <p><?php echo $this->Html->link($discussions['title'], array('controller' => 'discussions', 'action' => 'view', $discussions['id'])); ?></p>                                                
                                                 </div>
-                                                <?php if($section['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
                                                 <div class="col-md-2">
+ <?php if ($section['Course']['master'] == '1' && $user['Group']['name'] == 'Admin'): ?>                                                      
                                                     <?php echo $this->Html->link(__('Edit'), array('controller' => 'discussions', 'action' => 'edit', $discussions['id'], $activity['id']), array('class' => 'btn btn-warning btn-xs btn-block')); ?>                                                
+<?php endif;?>
+<?php if ($section['Course']['master'] == null): ?>
+                                                    <?php echo $this->Html->link(__('Edit'), array('controller' => 'discussions', 'action' => 'edit', $discussions['id'], $activity['id']), array('class' => 'btn btn-warning btn-xs btn-block')); ?>                                                
+<?php endif;?>                                                
                                                 </div>
-                                                <?php endif;?>
                                             </div>
                                         <?php endforeach; ?>
                                     </div>    
@@ -457,9 +491,12 @@ foreach ($section['Activity'] as $activities) {
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
                                         Resources (<?php echo count($activity['Resource']); ?>)
-                                        <?php if($section['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
+   <?php if ($section['Course']['master'] == '1' && $user['Group']['name'] == 'Admin'): ?>                                                                               
                                         <span class="text-muted"><?php echo $this->Html->link('Add Resource', array('controller' => 'resources', 'action' => 'add', $section['Section']['id'], $activity['id']), array('class' => 'btn btn-default btn-xs pull-right')); ?></span>                                   
-                                        <?php endif;?>
+   <?php endif;?>
+   <?php if ($section['Course']['master'] == null): ?>
+                                        <span class="text-muted"><?php echo $this->Html->link('Add Resource', array('controller' => 'resources', 'action' => 'add', $section['Section']['id'], $activity['id']), array('class' => 'btn btn-default btn-xs pull-right')); ?></span>                                                                           
+   <?php endif;?>                                     
                                     </h4>
                                 </div>
                                 <div class="panel-body">
@@ -468,18 +505,17 @@ foreach ($section['Activity'] as $activities) {
                                             <div class="panel-default">  
                                                 <div class="col-md-10">
                                                     <?php echo $this->Html->image('icons/icon' . $resource['type_id'] . '.png', array('width' => '25px', 'class' => 'pull-left img-thumbnail')); ?>
-                                                    <?php if($section['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
-                                                        <p><?php echo $this->Html->link($resource['title'], array('controller' => 'resources', 'action' => 'view', $resource['id'])); ?></p>                                                
-                                                    <?php endif;?>
-                                                    <?php if($section['Course']['master'] == null || $user['Group']['name'] !== 'Admin'):?>
-                                                        <p><?php echo $this->Html->link($resource['title'], array('controller' => 'resources', 'action' => 'view', $resource['id'], 1)); ?></p>                                                
-                                                    <?php endif;?>
+                                                    <p><?php echo $this->Html->link($resource['title'], array('controller' => 'resources', 'action' => 'view', $resource['id'])); ?></p>                                                
                                                 </div>
-                                                <?php if($section['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
                                                 <div class="col-md-2">
-                                                    <?php echo $this->Html->link(__('Edit'), array('controller' => 'resources', 'action' => 'edit', $resource['id'], $section['Section']['id'], $activity['id']), array('class' => 'btn btn-warning btn-xs btn-block')); ?>                                                
+   <?php if ($section['Course']['master'] == '1' && $user['Group']['name'] == 'Admin'): ?>                                                                                                                                   
+                                                    <?php echo $this->Html->link(__('Edit'), array('controller' => 'resources', 'action' => 'edit', $resource['id'], $section['Section']['id'], $activity['id']), array('class' => 'btn btn-warning btn-xs btn-block')); ?>
+  <?php endif;?>
+   <?php if ($section['Course']['master'] == null): ?>                                                    
+                                                     <?php echo $this->Html->link(__('Edit'), array('controller' => 'resources', 'action' => 'edit', $resource['id'], $section['Section']['id'], $activity['id']), array('class' => 'btn btn-warning btn-xs btn-block')); ?>
+ <?php endif;?>                                                  
+                                                    
                                                 </div>
-                                                <?php endif;?>
                                             </div>
                                         <?php endforeach; ?>
                                     </div> 

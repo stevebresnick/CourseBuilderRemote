@@ -104,6 +104,7 @@ class ResourcesController extends AppController {
         $this->Resource->id = $id;
         $this->set('sectionid', $sectionid);
         $this->set('activityid', $activityid);
+        $this->set('user', $this->Auth->user());
         if (!$this->Resource->exists()) {
             throw new NotFoundException(__('Invalid resource'));
         }

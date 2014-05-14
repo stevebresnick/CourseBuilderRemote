@@ -105,6 +105,6 @@ class DiscussionsController extends AppController {
 			$this->redirect(array('controller'=>'activities', 'action' => 'view', $sectionid));
 		}
 		$this->Session->setFlash(__('Discussion was not deleted'));
-		$this->redirect(array('controller'=>'activities', 'action' =>'view', $sectionid));
+		$this->redirect(array('controller'=>'sections', 'action' =>'view', $sectionid));
 	}
 }

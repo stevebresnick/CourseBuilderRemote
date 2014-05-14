@@ -45,7 +45,7 @@ $this->end();
             <h2 class="text-danger"><?php echo $resource['Resource']['title'];?></h2>
             <h4><?php echo $this->Html->link($resource['Resource']['path'], $resource['Resource']['path'], array('target'=>'blank'));?></h4>
             </div>
-            <?php if($mode === 1):?>
+            <?php if($mode == 1):?>
             <div class="col-md-2">
                 <?php if(!empty($resource['Activity'])){
                 echo $this->Html->link(__('Edit Resource'), array('action'=>'edit', $resource['Resource']['id'], $resource['Activity'][0]['section_id'], $resource['Activity'][0]['id']), array('class'=>'btn btn-warning btn-sm btn-block'));
@@ -53,8 +53,8 @@ $this->end();
                 echo $this->Html->link(__('Edit Resource'), array('action'=>'edit', $resource['Resource']['id'], $resource['Section'][0]['id']), array('class'=>'btn btn-warning btn-sm btn-block'));    
                 };
                 ?>
-                <?php endif;?>
-            </div>   
+                </div>
+                <?php endif;?> 
         </div>
         <div class="col-md-7">
             <div class="panel panel-success">
