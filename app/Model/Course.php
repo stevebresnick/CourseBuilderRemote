@@ -4,14 +4,35 @@ App::uses('AppModel', 'Model');
  * Course Model
  *
  * @property Section $Section
+ * @property Resource $Resource
+ * @property User $User
  */
 class Course extends AppModel {
+
 /**
  * Display field
  *
  * @var string
  */
 	public $displayField = 'title';
+
+/**
+ * Validation rules
+ *
+ * @var array
+ */
+	public $validate = array(
+		'callnumber' => array(
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
@@ -27,7 +48,7 @@ class Course extends AppModel {
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',
-			'order' => array('Section.number' => 'asc'),
+			'order' => '',
 			'limit' => '',
 			'offset' => '',
 			'exclusive' => '',
@@ -35,21 +56,14 @@ class Course extends AppModel {
 			'counterQuery' => ''
 		)
 	);
-        
-        public $validate = array(
-            'title' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => '**You must fill in a title!',
-				//'allowEmpty' => false,
-				'required' => true,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-	);
-        
-       public $hasAndBelongsToMany = array(
+
+
+/**
+ * hasAndBelongsToMany associations
+ *
+ * @var array
+ */
+	public $hasAndBelongsToMany = array(
 		'Resource' => array(
 			'className' => 'Resource',
 			'joinTable' => 'courses_resources',
@@ -62,8 +76,19 @@ class Course extends AppModel {
 			'limit' => '',
 			'offset' => '',
 			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
+		),
+		'User' => array(
+			'className' => 'User',
+			'joinTable' => 'courses_users',
+			'foreignKey' => 'course_id',
+			'associationForeignKey' => 'user_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
 		)
 	);
 

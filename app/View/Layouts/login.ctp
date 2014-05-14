@@ -62,22 +62,22 @@
 
     <body>
         <div>
-            <img src="../../webroot/img/logo.png" class="img-rounded" style="margin-left:20px;"/>
+            <?php echo $this->Html->image('logo.png', array('class'=>'img-rounded', 'style'=>'margin-left:20px'));?>
         </div>
 
         <div class="container">
-            <div>
-                <form class="form-signin" action="../actions/coursebuild.php" method="post">
-                    <h3 class="form-signin-heading"><?php echo $this->Html->link(__('Create New Course'), array('action' => 'add')); ?></h3>
-                </form>
-            </div>
+            <?php echo $this->Session->flash(); ?>
             <div class="form-signin">
-                <h3 class="form-signin-heading"><?php echo __('Choose Course:');?></h3>
                 <div class="list-group">
-                    <?php echo $this->Session->flash(); ?>
 
-                    <?php echo $this->fetch('content'); ?>
+                    <?php echo $this->fetch('login'); ?>
                 </div>
+            </div>
+            <div class="col-md-8">
+                <?php echo $this->fetch('courses'); ?>
+            </div>
+            <div class="col-md-4">
+                <?php echo $this->fetch('resources'); ?>
             </div>
         </div> <!-- /container -->
 

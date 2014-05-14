@@ -11,7 +11,7 @@
         echo $this->Html->script('jquery');
         echo $this->Html->css('bootstrap.min');
         ?>
-    <title>Facing History Coursebuilder: <?php echo $this->fetch('coursetitle');?></title>
+    <title>Facing History Coursebuilder</title>
 
     <!-- Bootstrap -->
 

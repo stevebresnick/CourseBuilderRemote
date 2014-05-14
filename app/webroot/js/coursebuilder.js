@@ -54,6 +54,11 @@ $('#htmlsourcecode').popover(
   $('#htmlsourcecode').click( function(){
      $('#htmlsource').toggle();
   });
+  
+  //Course Dashboard
+  $("#toggler").click(function(){
+  $(this).toggleClass('active, inactive');
+})
     
 
 });

@@ -11,6 +11,7 @@ echo $this->Html->link(__('View Courses'), array('action' => 'index'), array('cl
 <?php echo $this->end();?>
     
     <?php $this->start('courses'); ?>
+    </pre>
     <div class="courses">
         <?php foreach ($courses as $course): ?>
             <?php $coursetitle = h($course['Course']['title']); ?>

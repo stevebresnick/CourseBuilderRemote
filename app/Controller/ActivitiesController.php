@@ -28,6 +28,7 @@ class ActivitiesController extends AppController {
 	public function view($id = null) {
 		$this->Activity->recursive = 2;
                 $this->Activity->id = $id;
+                $this->set('user', $this->Auth->user());
 		if (!$this->Activity->exists()) {
 			throw new NotFoundException(__('Invalid activity'));
 		}

@@ -54,18 +54,34 @@
     <div id="tabs-2">
         <p></p>
         <hr style="width: 100%; height: 2px;" />
+        <p><span style="font-weight: bold; font-size: large;" size="4"><span style="color: #0000ff;"><br /><span style="font-family: arial,helvetica,sans-serif; color: #000099; font-size: medium;" size="3">[PLACEHOLDER FOR OPTIONAL SECONDARY SESSION QUOTE]</span></span></span><span style="font-family: arial,helvetica,sans-serif; font-size: medium;" size="3"> <span style="font-weight: bold;">--[PLACEHOLDER FOR SECONDARY SESSION QUOTE SPEAKER]</span></span><span style="font-size: large;" size="4"><span style="font-family: arial,helvetica,sans-serif; font-weight: bold; font-size: medium;" size="3"><span style="color: #0000ff;"></span></span><br /></span></p>
         <div style="margin-left: 200px;"></div>
         <hr style="width: 100%; height: 2px;" />
         <table class="choicesshadow" style="margin: 10px 20px; width: 315px;" cellpadding="10" cellspacing="10" align="right" border="0">
             <tbody>
                 <tr style="background: #58a796;">
                     <td>
-                        <h2 style="text-align: center;"><span style="font-size: medium;"><img src="http://stevebresnick.com/facing_history/coursebuilder/app/webroot/img/icons/icon11.png" style="margin-left: 10px; margin-right: 10px; vertical-align: middle; float: left;" height="41" width="40" /><span style="color: #ffffff;">Session Video</span></span></h2>
+                        <h2 style="text-align: center;"><span style="font-size: medium;"><img src="http://stevebresnick.com/facing_history/coursebuilder/app/webroot/img/icons/icon11.png" style="margin-left: 10px; margin-right: 10px; vertical-align: middle; float: left;" height="41" width="40" /><span style="color: #ffffff;">[PLACEHOLDER FOR SESSION VIDEO]</span></span></h2>
                     </td>
                 </tr>
                 <tr style="background: #fffbd9;"> <!---START VIDEO WRAPPER------>
                     <td><!-- Start of Brightcove Player -->
-                        <?php echo $section['Section']['video'];?>
+                        <div style="display: none;"></div>
+                        <!--
+                        By use of this code snippet, I agree to the Brightcove Publisher T and C 
+                        found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+                        -->
+                        <script src="http://admin.brightcove.com/js/BrightcoveExperiences.js" type="text/javascript"></script>
+                        <object id="myExperience2686042344001" class="BrightcoveExperience"><param name="bgcolor" value="#FFFFFF" /><param name="width" value="310" /><param name="height" value="174" /><param name="playerID" value="2210701511001" /><param name="playerKey" value="AQ~~,AAABYEdBaAk~,1dGnVytVBSyAcRv2ttkHUilGtqLWHavw" /><param name="isVid" value="true" /><param name="isUI" value="true" /><param name="dynamicStreaming" value="true" /><param name="@videoPlayer" value="2686042344001" /></object> <!-- 
+                        This script tag will cause the Brightcove Players defined above it to be created as soon
+                        as the line is read by the browser. If you wish to have the player instantiated only after
+                        the rest of the HTML is processed and the page load is complete, remove the line.
+                        -->
+                        <script type="text/javascript">// <![CDATA[
+    brightcove.createExperiences();
+    // ]]></script>
+                        <!-- End of Brightcove Player -->
+                        <p style="text-align: center;"><span style="font-size: x-small;"><em>Facing History Scholar Reflection: Scholar Paul Bookbinder providers historical contexts for this session on the Holocaust</em></span></p>
                     </td>
                 </tr>
             </tbody>

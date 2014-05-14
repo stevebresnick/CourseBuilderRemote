@@ -116,3 +116,23 @@ body {
   height: 100px; 
   visibility: hidden; 
 }
+
+.mycourses {
+    max-height:300px;
+    overflow-y: hidden;
+    overflow-style: scrollbar;
+    overflow: scroll;
+}
+
+.mastercourses {
+    max-height: 200px;
+    overflow-y: hidden;
+    overflow-style: scrollbar;
+    overflow: scroll;
+}
+
+.active i.icon-folder-open{ display:inline-block; }
+.active i.icon-folder-close { display:none;}
+
+.inactive i.icon-folder-close{ display:inline-block; }
+.inactive i.icon-folder-open { display:none;}

@@ -1,1 +1,1 @@
-<?php $this->extend('/Common/resourceview');?>
+<?php $this->extend('/Common/dashboard');?>

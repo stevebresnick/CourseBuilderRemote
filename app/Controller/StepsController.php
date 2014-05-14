@@ -17,6 +17,9 @@ class StepsController extends AppController {
 	public function index() {
 		$this->Step->recursive = 0;
 		$this->set('steps', $this->paginate());
+                $this->layout = 'default';
+                $this->loadModel('Course');
+                $this->set('courses', $this->Course->find('list'));
 	}
 
 /**
@@ -99,4 +102,9 @@ class StepsController extends AppController {
 		$this->Session->setFlash(__('Step was not deleted'));
 		$this->redirect(array('action' => 'add', $activityid));
 	}
+        
+        public function duplicate($id = null) {
+            $this->Step->duplicate($id);
+            $this->redirect(array('action'=>'index'));
+        }
 }

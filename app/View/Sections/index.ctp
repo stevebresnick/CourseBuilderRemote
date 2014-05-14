@@ -1,3 +1,6 @@
+<pre>
+<?php print_r($oldsection);?>
+</pre>
 <div class="sections index">
 	<h2><?php echo __('Sections');?></h2>
 	<table cellpadding="0" cellspacing="0">

@@ -79,5 +79,7 @@ class PagesController extends AppController {
                 $custom = 'This is my custom content.';
 		$this->set(compact('page', 'subpage', 'title_for_layout', 'custom'));
 		$this->render(implode('/', $path));
+              
+                
 	}
 }

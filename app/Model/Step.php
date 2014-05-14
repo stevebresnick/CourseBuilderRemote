@@ -29,4 +29,10 @@ class Step extends AppModel {
 			'order' => ''
 		)
 	);
+        
+        public function duplicate($id = null) {
+            $row = $this->find('all', array('conditions'=>array('Step.id'=>$id)));
+            $this->create();
+            $this->save($row);
+        }
 }

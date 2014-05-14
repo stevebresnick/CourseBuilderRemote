@@ -7,14 +7,17 @@
 			<th><?php echo $this->Paginator->sort('precedureStep');?></th>
 			<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
-	<?php
+        <pre>
+<?php print_r($courses);?>
+        </pre>
+        <?php
 	foreach ($steps as $step): ?>
 	<tr>
 		<td><?php echo h($step['Step']['id']); ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($step['Activity']['title'], array('controller' => 'activities', 'action' => 'view', $step['Activity']['id'])); ?>
 		</td>
-		<td><?php echo h($step['Step']['precedureStep']); ?>&nbsp;</td>
+		<td><?php echo h($step['Step']['procedureStep']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $step['Step']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $step['Step']['id'])); ?>

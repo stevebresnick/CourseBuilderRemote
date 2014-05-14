@@ -1,8 +1,4 @@
 <?php $this->start('activitypreview'); ?>
-<?php if(!empty($activity['Activity']['html'])){
-    echo $activity['Activity']['html'];
-};?>
-<?php if(empty($activity['Activity']['html'])):?>
 <meta charset="utf-8" />
 <title><?php echo $activity['Activity']['title']; ?></title>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
@@ -141,5 +137,4 @@
 </tr>
 </tbody>
 </table>
-<?php endif;?>
 <?php $this->end(); ?>

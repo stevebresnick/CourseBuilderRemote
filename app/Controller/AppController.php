@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Application level Controller
  *
@@ -20,7 +21,6 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-App::uses('Controller', 'Controller');
 
 /**
  * Application Controller
@@ -31,5 +31,34 @@ App::uses('Controller', 'Controller');
  * @package       app.Controller
  * @link http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
+// app/Controller/AppController.php
 class AppController extends Controller {
+    public $components = array(
+        'Acl',
+        'Auth' => array(
+            'authorize' => array(
+                'Actions' => array('actionPath' => 'controllers')
+            )
+        ),
+        'Session'
+    );
+    public $helpers = array('Html', 'Form', 'Session');
+
+    public function beforeFilter() {
+        //Configure AuthComponent
+        $this->Auth->loginAction = array(
+          'controller' => 'users',
+          'action' => 'login'
+        );
+        $this->Auth->logoutRedirect = array(
+          'controller' => 'users',
+          'action' => 'login'
+        );
+        $this->Auth->loginRedirect = array(
+          'controller' => 'courses',
+          'action' => 'add'
+        );
+        $this->Auth->allow('display');
+    }
 }
+

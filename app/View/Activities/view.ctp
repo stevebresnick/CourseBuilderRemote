@@ -1,5 +1,5 @@
 <?php $this->start('sessiontitle'); ?>
-<?php //echo $this->Html->image('sessiontiles/sessiontile'.$activity[0]['Section']['number'].'.png', array('style'=>'margin-right: 10px', 'width'=>'30', 'height'=>'30')); ?>
+<?php //echo $this->Html->image('sessiontiles/sessiontile'.$activity[0]['Section']['number'].'.png', array('style'=>'margin-right: 10px', 'width'=>'30', 'height'=>'30'));  ?>
 <?php echo $this->Html->link('Session ' . $activity['Section']['number'] . ': ' . $activity['Section']['title'], array('controller' => 'sections', 'action' => 'view', $activity['Section']['id'])); ?>
 <?php $this->end(); ?>
 
@@ -17,7 +17,7 @@
 <div class="panel panel-info panel-body" style="background:#fffbd9;">
     <div class="panel panel-success panel-body">
         <div class="col-md-2" style="height:350px;">
-            <p class="text-center"><?php echo $this->Html->image('icons/icon'.$activity['Activity']['type_id'].'.png', array('style' => 'margin-right: 10px', 'width' => '100', 'height' => '100')); ?></p>
+            <p class="text-center"><?php echo $this->Html->image('icons/icon' . $activity['Activity']['type_id'] . '.png', array('style' => 'margin-right: 10px', 'width' => '100', 'height' => '100')); ?></p>
             <p class="text-center text-info"><?php echo $activity['Type']['type'] . ' Activity'; ?></p>
             <?php
             if ($activity['Activity']['required']) {
@@ -27,12 +27,14 @@
             };
             ?>
             <p class="text-center">
+            <?php if($activity['Section']['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
                 <?php echo $this->Html->link(__('Edit Activity'), array('action' => 'edit', $activity['Activity']['id']), array('class' => 'btn btn-warning btn-block btn-xs')); ?>
                 <?php echo $this->Html->link(__('Activity Goals'), array('controller' => 'goals', 'action' => 'add', $activity['Activity']['id']), array('class' => 'btn btn-success btn-block btn-xs')); ?>
                 <?php echo $this->Html->link(__('Activity Procedure'), array('controller' => 'steps', 'action' => 'add', $activity['Activity']['id']), array('class' => 'btn btn-info btn-block btn-xs')); ?>
                 <?php echo $this->Html->link(__('Add Discussion'), array('controller' => 'discussions', 'action' => 'add', $activity['Activity']['id']), array('class' => 'btn btn-primary btn-block btn-xs')); ?>
                 <?php echo $this->Html->link(__('Add Resource'), array('controller' => 'resources', 'action' => 'add', $activity['Section']['id'], $activity['Activity']['id']), array('class' => 'btn btn-danger btn-block btn-xs')); ?>
-                <?php echo $this->Html->link(__('Preview Activity'), array('action' => 'preview', $activity['Activity']['id']), array('class' => 'btn btn-default btn-block btn-xs', 'target'=>'blank')); ?>
+            <?php endif;?>
+                <?php echo $this->Html->link(__('Preview Activity'), array('action' => 'preview', $activity['Activity']['id']), array('class' => 'btn btn-default btn-block btn-xs', 'target' => 'blank')); ?>
             </p>
         </div>
         <div class="col-md-6">
@@ -56,22 +58,28 @@
         <div class="col-md-4">
             <div class="panel panel-danger">
                 <div class="panel panel-heading">
-                    <h3 class="panel-title">Activity Resources (<?php echo count($activity['Resource']); ?>) <span class="text-muted"><?php echo $this->Html->link('Add Resource', array('controller' => 'resources', 'action' => 'add', $activity['Section']['id'], $activity['Activity']['id']), array('class' => 'btn btn-default btn-xs pull-right')); ?></span></h3>
+                    <h3 class="panel-title">Activity Resources (<?php echo count($activity['Resource']); ?>)
+                        <?php if($activity['Section']['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
+                        <span class="text-muted"><?php echo $this->Html->link('Add Resource', array('controller' => 'resources', 'action' => 'add', $activity['Section']['id'], $activity['Activity']['id']), array('class' => 'btn btn-default btn-xs pull-right')); ?></span></h3>
+                        <?php endif;?>
                 </div>
                 <div class="panel-body" style="height:300px; overflow-y: hidden; overflow: scroll;">
-                    <?php foreach ($activity['Resource'] as $resource):?>
-                    <div class="col-md-12 panel"> 
-                    <div class="col-md-2">
-                        <?php echo $this->Html->image('icons/icon'. $resource['type_id']. '.png', array('width'=>'30px', 'height'=>'30px'));?>
-                    </div>
-                    <div class="col-md-7">
-                         <?php echo $this->Html->link($resource['title'], array('controller'=>'resources', 'action'=>'view', $resource['id'])) ;?>
-                    </div>
-                    <div class="col-md-3">
-                        <?php echo $this->Html->link('Edit', array('controller'=>'resources', 'action'=>'edit', $resource['id'], $activity['Section']['id'], $activity['Activity']['id'], ), array('class'=>'btn btn-xs btn-warning btn-block'));?>
-                    </div>
-                    </div>
-                    <?php endforeach;?>
+                    <?php foreach ($activity['Resource'] as $resource): ?>
+                        <div class="col-md-12 panel"> 
+                            <div class="col-md-2">
+                                <?php echo $this->Html->image('icons/icon' . $resource['type_id'] . '.png', array('width' => '30px', 'height' => '30px')); ?>
+                            </div>
+                            <div class="col-md-6">
+                                <?php echo $this->Html->link($resource['title'], array('controller' => 'resources', 'action' => 'view', $resource['id'])); ?>
+                            </div>
+                            <?php if($activity['Section']['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
+                            <div class="col-md-4">
+                                <?php echo $this->Html->link('Edit', array('controller' => 'resources', 'action' => 'edit', $resource['id'], $activity['Section']['id'], $activity['Activity']['id'],), array('class' => 'btn btn-xs btn-warning btn-block')); ?>
+                                <?php echo $this->Html->link(__('Remove'), array('controller' => 'resources', 'action' => 'removefrom', $resource['id'], $activity['Section']['id'], $activity['Activity']['id']), array('class' => 'btn btn-xs btn-danger btn-block'), __('Are you sure you want to remove this resource?')); ?>
+                            </div>
+                            <?php endif;?>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
@@ -82,16 +90,16 @@
                 </div>
                 <div class="panel-body" style="height:200px; overflow-y: hidden; overflow: scroll;">
                     <ol>
-                                <?php foreach ($activity['Goal'] as $goal): ?>
+                        <?php foreach ($activity['Goal'] as $goal): ?>
                             <div class="col-md-10">
                                 <li>
-    <?php echo $goal['goal']; ?>
+                                    <?php echo $goal['goal']; ?>
                                 </li>
                             </div>
                             <div class="col-md-2">
                                 <p><?php echo $this->Html->link(__('Edit'), array('controller' => 'goals', 'action' => 'edit', $goal['id'], $goal['activity_id']), array('class' => 'btn btn-xs btn-warning')); ?></p>
                             </div>
-<?php endforeach; ?>
+                        <?php endforeach; ?>
                     </ol>
                 </div>
             </div>
@@ -103,16 +111,16 @@
                 </div>
                 <div class="panel-body" style="height:200px; overflow-y: hidden; overflow: scroll;">
                     <ol>
-                                <?php foreach ($activity['Step'] as $step): ?>
+                        <?php foreach ($activity['Step'] as $step): ?>
                             <div class="col-md-10">
                                 <li>
-    <?php echo $step['procedureStep']; ?>
+                                    <?php echo $step['procedureStep']; ?>
                                 </li>
                             </div>
                             <div class="col-md-2">
                                 <p><?php echo $this->Html->link(__('Edit'), array('controller' => 'steps', 'action' => 'edit', $step['id'], $step['activity_id']), array('class' => 'btn btn-xs btn-warning')); ?></p>
                             </div>
-<?php endforeach; ?>
+                        <?php endforeach; ?>
                     </ol>
                 </div>
             </div>
@@ -124,15 +132,15 @@
                 </div>
                 <div class="panel-body" style="height:200px; overflow-y: hidden; overflow: scroll;">   
                     <?php foreach ($activity['Discussion'] as $discussion): ?>
-                            <div class="col-md-10">
-                                <?php echo $this->Html->link($discussion['title'], array('controller' => 'discussions', 'action' => 'view', $discussion['id'])); ?>
-                            </div>
-                            <div class="col-md-2">
-                                <p><?php echo $this->Html->link(__('Edit'), array('controller' => 'discussions', 'action' => 'edit', $discussion['id'], $discussion['activity_id']), array('class' => 'btn btn-xs btn-warning')); ?></p>
-                            </div>
-                    <div class="col-md-12">
-                        <hr/>
-                    </div>
+                        <div class="col-md-10">
+                            <?php echo $this->Html->link($discussion['title'], array('controller' => 'discussions', 'action' => 'view', $discussion['id'])); ?>
+                        </div>
+                        <div class="col-md-2">
+                            <p><?php echo $this->Html->link(__('Edit'), array('controller' => 'discussions', 'action' => 'edit', $discussion['id'], $discussion['activity_id']), array('class' => 'btn btn-xs btn-warning')); ?></p>
+                        </div>
+                        <div class="col-md-12">
+                            <hr/>
+                        </div>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -147,37 +155,37 @@
     <dl>
         <dt><?php echo __('Id'); ?></dt>
         <dd>
-<?php echo h($activity['Activity']['id']); ?>
+            <?php echo h($activity['Activity']['id']); ?>
             &nbsp;
         </dd>
         <dt><?php echo __('Section'); ?></dt>
         <dd>
-<?php echo $this->Html->link($activity['Section']['title'], array('controller' => 'sections', 'action' => 'view', $activity['Section']['id'])); ?>
+            <?php echo $this->Html->link($activity['Section']['title'], array('controller' => 'sections', 'action' => 'view', $activity['Section']['id'])); ?>
             &nbsp;
         </dd>
         <dt><?php echo __('Required'); ?></dt>
         <dd>
-<?php echo h($activity['Activity']['required']); ?>
+            <?php echo h($activity['Activity']['required']); ?>
             &nbsp;
         </dd>
         <dt><?php echo __('Title'); ?></dt>
         <dd>
-<?php echo h($activity['Activity']['title']); ?>
+            <?php echo h($activity['Activity']['title']); ?>
             &nbsp;
         </dd>
         <dt><?php echo __('Introbrief'); ?></dt>
         <dd>
-<?php echo h($activity['Activity']['introbrief']); ?>
+            <?php echo h($activity['Activity']['introbrief']); ?>
             &nbsp;
         </dd>
         <dt><?php echo __('Introdetailed'); ?></dt>
         <dd>
-<?php echo h($activity['Activity']['introdetailed']); ?>
+            <?php echo h($activity['Activity']['introdetailed']); ?>
             &nbsp;
         </dd>
         <dt><?php echo __('Type'); ?></dt>
         <dd>
-<?php echo $this->Html->link($activity['Type']['type'], array('controller' => 'types', 'action' => 'view', $activity['Type']['id'])); ?>
+            <?php echo $this->Html->link($activity['Type']['type'], array('controller' => 'types', 'action' => 'view', $activity['Type']['id'])); ?>
             &nbsp;
         </dd>
     </dl>
@@ -204,10 +212,10 @@
     </ul>
 </div>
 <?php $this->end(); ?>
-    <?php //$this->start('discussions'); ?>
+<?php //$this->start('discussions'); ?>
 <div class="related">
     <h3><?php echo __('Related Discussions'); ?></h3>
-<?php if (!empty($activity['Discussion'])): ?>
+    <?php if (!empty($activity['Discussion'])): ?>
         <table cellpadding = "0" cellspacing = "0">
             <tr>
                 <th><?php echo __('Id'); ?></th>
@@ -230,14 +238,14 @@
                     <td><?php echo $discussion['activity_id']; ?></td>
                     <td><?php echo $discussion['section_id']; ?></td>
                     <td class="actions">
-        <?php echo $this->Html->link(__('View'), array('controller' => 'discussions', 'action' => 'view', $discussion['id'])); ?>
-                <?php echo $this->Html->link(__('Edit'), array('controller' => 'discussions', 'action' => 'edit', $discussion['id'])); ?>
-                <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'discussions', 'action' => 'delete', $discussion['id']), null, __('Are you sure you want to delete # %s?', $discussion['id'])); ?>
+                        <?php echo $this->Html->link(__('View'), array('controller' => 'discussions', 'action' => 'view', $discussion['id'])); ?>
+                        <?php echo $this->Html->link(__('Edit'), array('controller' => 'discussions', 'action' => 'edit', $discussion['id'])); ?>
+                        <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'discussions', 'action' => 'delete', $discussion['id']), null, __('Are you sure you want to delete # %s?', $discussion['id'])); ?>
                     </td>
                 </tr>
-    <?php endforeach; ?>
+            <?php endforeach; ?>
         </table>
-<?php endif; ?>
+    <?php endif; ?>
 
     <div class="actions">
         <ul>
@@ -245,10 +253,10 @@
         </ul>
     </div>
 </div>
-    <?php $this->end(); ?>
+<?php $this->end(); ?>
 <div class="related">
     <h3><?php echo __('Related Goals'); ?></h3>
-<?php if (!empty($activity['Goal'])): ?>
+    <?php if (!empty($activity['Goal'])): ?>
         <table cellpadding = "0" cellspacing = "0">
             <tr>
                 <th><?php echo __('Id'); ?></th>
@@ -256,23 +264,23 @@
                 <th><?php echo __('Goal'); ?></th>
                 <th class="actions"><?php echo __('Actions'); ?></th>
             </tr>
-    <?php
-    $i = 0;
-    foreach ($activity['Goal'] as $goal):
-        ?>
+            <?php
+            $i = 0;
+            foreach ($activity['Goal'] as $goal):
+                ?>
                 <tr>
                     <td><?php echo $goal['id']; ?></td>
                     <td><?php echo $goal['activity_id']; ?></td>
                     <td><?php echo $goal['goal']; ?></td>
                     <td class="actions">
-                <?php echo $this->Html->link(__('View'), array('controller' => 'goals', 'action' => 'view', $goal['id'])); ?>
-                <?php echo $this->Html->link(__('Edit'), array('controller' => 'goals', 'action' => 'edit', $goal['id'])); ?>
-            <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'goals', 'action' => 'delete', $goal['id']), null, __('Are you sure you want to delete # %s?', $goal['id'])); ?>
+                        <?php echo $this->Html->link(__('View'), array('controller' => 'goals', 'action' => 'view', $goal['id'])); ?>
+                        <?php echo $this->Html->link(__('Edit'), array('controller' => 'goals', 'action' => 'edit', $goal['id'])); ?>
+                        <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'goals', 'action' => 'delete', $goal['id']), null, __('Are you sure you want to delete # %s?', $goal['id'])); ?>
                     </td>
                 </tr>
-    <?php endforeach; ?>
+            <?php endforeach; ?>
         </table>
-<?php endif; ?>
+    <?php endif; ?>
 
     <div class="actions">
         <ul>
@@ -282,7 +290,7 @@
 </div>
 <div class="related">
     <h3><?php echo __('Related Steps'); ?></h3>
-<?php if (!empty($activity['Step'])): ?>
+    <?php if (!empty($activity['Step'])): ?>
         <table cellpadding = "0" cellspacing = "0">
             <tr>
                 <th><?php echo __('Id'); ?></th>
@@ -290,23 +298,23 @@
                 <th><?php echo __('PrecedureStep'); ?></th>
                 <th class="actions"><?php echo __('Actions'); ?></th>
             </tr>
-    <?php
-    $i = 0;
-    foreach ($activity['Step'] as $step):
-        ?>
+            <?php
+            $i = 0;
+            foreach ($activity['Step'] as $step):
+                ?>
                 <tr>
                     <td><?php echo $step['id']; ?></td>
                     <td><?php echo $step['activity_id']; ?></td>
                     <td><?php echo $step['precedureStep']; ?></td>
                     <td class="actions">
-                <?php echo $this->Html->link(__('View'), array('controller' => 'steps', 'action' => 'view', $step['id'])); ?>
-            <?php echo $this->Html->link(__('Edit'), array('controller' => 'steps', 'action' => 'edit', $step['id'])); ?>
-            <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'steps', 'action' => 'delete', $step['id']), null, __('Are you sure you want to delete # %s?', $step['id'])); ?>
+                        <?php echo $this->Html->link(__('View'), array('controller' => 'steps', 'action' => 'view', $step['id'])); ?>
+                        <?php echo $this->Html->link(__('Edit'), array('controller' => 'steps', 'action' => 'edit', $step['id'])); ?>
+                        <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'steps', 'action' => 'delete', $step['id']), null, __('Are you sure you want to delete # %s?', $step['id'])); ?>
                     </td>
                 </tr>
-    <?php endforeach; ?>
+            <?php endforeach; ?>
         </table>
-<?php endif; ?>
+    <?php endif; ?>
 
     <div class="actions">
         <ul>
@@ -316,7 +324,7 @@
 </div>
 <div class="related">
     <h3><?php echo __('Related Resources'); ?></h3>
-<?php if (!empty($activity['Resource'])): ?>
+    <?php if (!empty($activity['Resource'])): ?>
         <table cellpadding = "0" cellspacing = "0">
             <tr>
                 <th><?php echo __('Id'); ?></th>
@@ -326,10 +334,10 @@
                 <th><?php echo __('Description'); ?></th>
                 <th class="actions"><?php echo __('Actions'); ?></th>
             </tr>
-    <?php
-    $i = 0;
-    foreach ($activity['Resource'] as $resource):
-        ?>
+            <?php
+            $i = 0;
+            foreach ($activity['Resource'] as $resource):
+                ?>
                 <tr>
                     <td><?php echo $resource['id']; ?></td>
                     <td><?php echo $resource['title']; ?></td>
@@ -337,14 +345,14 @@
                     <td><?php echo $resource['path']; ?></td>
                     <td><?php echo $resource['description']; ?></td>
                     <td class="actions">
-            <?php echo $this->Html->link(__('View'), array('controller' => 'resources', 'action' => 'view', $resource['id'])); ?>
-            <?php echo $this->Html->link(__('Edit'), array('controller' => 'resources', 'action' => 'edit', $resource['id'])); ?>
-        <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'resources', 'action' => 'delete', $resource['id']), null, __('Are you sure you want to delete # %s?', $resource['id'])); ?>
+                        <?php echo $this->Html->link(__('View'), array('controller' => 'resources', 'action' => 'view', $resource['id'])); ?>
+                        <?php echo $this->Html->link(__('Edit'), array('controller' => 'resources', 'action' => 'edit', $resource['id'])); ?>
+                        <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'resources', 'action' => 'delete', $resource['id']), null, __('Are you sure you want to delete # %s?', $resource['id'])); ?>
                     </td>
                 </tr>
-    <?php endforeach; ?>
+            <?php endforeach; ?>
         </table>
-<?php endif; ?>
+    <?php endif; ?>
 
     <div class="actions">
         <ul>

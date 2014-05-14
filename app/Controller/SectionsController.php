@@ -12,9 +12,10 @@ class SectionsController extends AppController {
  *
  * @return void
  */
-	public function index() {
+	public function index($id=NULL) {
 		$this->Section->recursive = 0;
 		$this->set('sections', $this->paginate());
+                $this->duplicate($id);
 	}
 
 /**
@@ -25,6 +26,7 @@ class SectionsController extends AppController {
  */
 	public function view($id = null) {
 		$this->Section->id = $id;
+                $this->set('user', $this->Auth->user());
                 $this->Section->recursive = 2;
 		if (!$this->Section->exists()) {
 			throw new NotFoundException(__('Invalid section'));
@@ -99,7 +101,7 @@ class SectionsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null, $sectionid = null) {
+	public function delete($id = null, $courseid = null) {
 		if (!$this->request->is('post')) {
 			throw new MethodNotAllowedException();
 		}
@@ -109,7 +111,7 @@ class SectionsController extends AppController {
 		}
 		if ($this->Section->delete()) {
 			$this->Session->setFlash(__('Section deleted'));
-			$this->redirect(array('controller'=>'courses', 'action' => 'view', $sectionid));
+			$this->redirect(array('controller'=>'courses', 'action' => 'view', $courseid));
 		}
 		$this->Session->setFlash(__('Section was not deleted'));
 		$this->redirect(array('action' => 'index'));
@@ -129,5 +131,15 @@ class SectionsController extends AppController {
             $this->Section->id = $id;
             $this->set('type', $this->Section->Activity->Resource->Type->find('list'));
             $this->set('section', $this->Section->read(null, $id));
+        }
+        
+        public function duplicate($courseid = NULL) {
+            $this->Section->recursive = 2;
+            $newsection['Section']['id'] = NULL;
+            $newsection['Section']['course_id'] = NULL;
+            $newsection['Section']['course_id'] = $courseid;
+            if(!$this->Section->save($newsection)){
+                $this->Session->setFlash('Didn\'t Clone Section');
+            };
         }
 }

@@ -1,4 +1,4 @@
 <pre>
 <?php
-print_r($clonedCourse);?>
+echo $newcourseid;?>
 </pre>

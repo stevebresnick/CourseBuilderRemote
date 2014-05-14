@@ -46,8 +46,8 @@
         <hr/>
         <div class="row">
             <div class="container-fluid">
+                <h2><?php echo __('Resources'); ?></h2>
                 <div class="panel panel-info panel-body col-md-8">
-                    <h2><?php echo __('Existing Resources'); ?></h2>
                     <?php echo $this->fetch('resources'); ?>
                 </div>
                     <!---------COURSES END-------------->

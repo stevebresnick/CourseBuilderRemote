@@ -26,7 +26,7 @@
 	<?php
 		echo $this->Html->div('form-group col-md-1', $this->Form->input('number', array('type'=>'select', 'options'=>$sessionsremaining), array('class' => 'form-control')));
                 echo $this->Html->div('form-group col-md-4', $this->Form->input('title', array('class' => 'form-control')));
-                echo $this->Html->div('form-group col-md-4', $this->Form->input('video', array('class' => 'form-control', 'rows'=>1)));
+                echo $this->Html->div('form-group col-md-4', $this->Form->input('video', array('class' => 'form-control')));
                 echo $this->Html->div('form-group col-md-3', $this->Form->input('scope_id', array('label'=>'Scope and Sequence','class' => 'form-control')));
                 echo $this->Html->div('form-group col-md-12', $this->Form->input('intro', array('class' => 'form-control', 'rows'=>5)));
                 echo $this->Html->div('form-group col-md-12', $this->Form->input('quote', array('class' => 'form-control', 'rows'=>2)));

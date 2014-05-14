@@ -23,7 +23,7 @@
 
 <?php $this->start('navigation');?>
 <?php 
-echo $this->Html->div('col-md-12', $this->Html->link(__('Back to Courses'), array('action' => 'index'), array('class'=>'btn btn-success btn-md btn-block')));
+echo $this->Html->div('col-md-12', $this->Html->link(__('User Dashboard'), array('controller'=>'users','action' => 'dashboard'), array('class'=>'btn btn-success btn-md btn-block')));
 echo $this->Html->div('col-md-12', $this->Html->link(__('Course Dashboard'), array('action' => 'view', $course['Course']['id']), array('class' => 'btn btn-warning btn-md btn-block')));
 echo $this->Html->div('col-md-12', $this->Form->postLink(__('Delete Course'), array('action' => 'delete', $this->Form->value('Course.id')), array('class'=>'btn btn-danger btn-md btn-block'), __('Are you sure you want to delete %s?', $this->Form->value('Course.title'))));?>
 <?php $this->end(); ?>

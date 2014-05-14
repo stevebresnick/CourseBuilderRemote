@@ -1,1 +1,1 @@
-<?php $this->extend('../Common/dashboard');?>
+<?php $this->extend('../Common/dashboardoutline');?>
