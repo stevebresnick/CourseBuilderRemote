@@ -33320,3 +33320,244 @@ Stack Trace:
 #3 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Core/App.php(902): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2014-05-16 10:44:45 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2005] Unknown MySQL server host \'https://p3nlmysqladm001.secureserver.net/nl41/7\' (2)',
+  'enabled' => true,
+)
+Request URL: /CourseBuilderRemote/
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(3477): ConnectionManager::getDataSource('default')
+#3 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(1126): Model->setDataSource('default')
+#4 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(3499): Model->setSource('courses')
+#5 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(2903): Model->getDataSource()
+#6 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(2875): Model->_readDataSource('all', Array)
+#7 /media/sf_sandbox/CourseBuilderRemote/app/Controller/UsersController.php(266): Model->find('all')
+#8 [internal function]: UsersController->login()
+#9 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#11 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-05-16 10:48:02 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2003] Can\'t connect to MySQL server on \'texashhb.db.9821135.hostedresource.com\' (4)',
+  'enabled' => true,
+)
+Request URL: /CourseBuilderRemote/resources
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(3477): ConnectionManager::getDataSource('default')
+#3 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(1126): Model->setDataSource('default')
+#4 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(3499): Model->setSource('aros_acos')
+#5 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(1355): Model->getDataSource()
+#6 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Permission.php(81): Model->schema()
+#7 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Component/Acl/DbAcl.php(74): Permission->check(Array, 'controllers/Res...', '*')
+#8 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Component/AclComponent.php(110): DbAcl->check(Array, 'controllers/Res...', '*')
+#9 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Component/Auth/ActionsAuthorize.php(40): AclComponent->check(Array, 'controllers/Res...')
+#10 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Component/AuthComponent.php(464): ActionsAuthorize->authorize(Array, Object(CakeRequest))
+#11 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Component/AuthComponent.php(309): AuthComponent->isAuthorized(Array)
+#12 [internal function]: AuthComponent->startup(Object(ResourcesController))
+#13 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Utility/ObjectCollection.php(132): call_user_func_array(Array, Array)
+#14 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#15 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#16 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#17 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(182): Controller->startupProcess()
+#18 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ResourcesController), Object(CakeRequest), Object(CakeResponse))
+#19 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#20 {main}
+2014-05-16 10:48:32 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2003] Can\'t connect to MySQL server on \'texashhb.db.9821135.hostedresource.com\' (4)',
+  'enabled' => true,
+)
+Request URL: /CourseBuilderRemote/users/dashboard/1
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(3477): ConnectionManager::getDataSource('default')
+#3 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(1126): Model->setDataSource('default')
+#4 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(3499): Model->setSource('aros_acos')
+#5 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(1355): Model->getDataSource()
+#6 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Permission.php(81): Model->schema()
+#7 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Component/Acl/DbAcl.php(74): Permission->check(Array, 'controllers/Use...', '*')
+#8 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Component/AclComponent.php(110): DbAcl->check(Array, 'controllers/Use...', '*')
+#9 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Component/Auth/ActionsAuthorize.php(40): AclComponent->check(Array, 'controllers/Use...')
+#10 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Component/AuthComponent.php(464): ActionsAuthorize->authorize(Array, Object(CakeRequest))
+#11 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Component/AuthComponent.php(309): AuthComponent->isAuthorized(Array)
+#12 [internal function]: AuthComponent->startup(Object(UsersController))
+#13 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Utility/ObjectCollection.php(132): call_user_func_array(Array, Array)
+#14 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#15 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#16 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#17 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(182): Controller->startupProcess()
+#18 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#19 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#20 {main}
+2014-05-16 11:02:06 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2003] Can\'t connect to MySQL server on \'texashhb.db.9821135.hostedresource.com\' (4)',
+  'enabled' => true,
+)
+Request URL: /CourseBuilderRemote/
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(3477): ConnectionManager::getDataSource('default')
+#3 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(1126): Model->setDataSource('default')
+#4 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(3499): Model->setSource('courses')
+#5 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(2903): Model->getDataSource()
+#6 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(2875): Model->_readDataSource('all', Array)
+#7 /media/sf_sandbox/CourseBuilderRemote/app/Controller/UsersController.php(266): Model->find('all')
+#8 [internal function]: UsersController->login()
+#9 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#11 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-05-16 11:02:29 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2003] Can\'t connect to MySQL server on \'texashhb.db.9821135.hostedresource.com\' (4)',
+  'enabled' => true,
+)
+Request URL: /CourseBuilderRemote/
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(3477): ConnectionManager::getDataSource('default')
+#3 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(1126): Model->setDataSource('default')
+#4 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(3499): Model->setSource('courses')
+#5 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(2903): Model->getDataSource()
+#6 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(2875): Model->_readDataSource('all', Array)
+#7 /media/sf_sandbox/CourseBuilderRemote/app/Controller/UsersController.php(266): Model->find('all')
+#8 [internal function]: UsersController->login()
+#9 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#11 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-05-16 11:02:47 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2003] Can\'t connect to MySQL server on \'texashhb.db.9821135.hostedresource.com\' (4)',
+  'enabled' => true,
+)
+Request URL: /CourseBuilderRemote/
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(3477): ConnectionManager::getDataSource('default')
+#3 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(1126): Model->setDataSource('default')
+#4 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(3499): Model->setSource('courses')
+#5 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(2903): Model->getDataSource()
+#6 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(2875): Model->_readDataSource('all', Array)
+#7 /media/sf_sandbox/CourseBuilderRemote/app/Controller/UsersController.php(266): Model->find('all')
+#8 [internal function]: UsersController->login()
+#9 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#11 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-05-16 11:03:00 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2003] Can\'t connect to MySQL server on \'texashhb.db.9821135.hostedresource.com\' (4)',
+  'enabled' => true,
+)
+Request URL: /CourseBuilderRemote/
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(3477): ConnectionManager::getDataSource('default')
+#3 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(1126): Model->setDataSource('default')
+#4 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(3499): Model->setSource('courses')
+#5 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(2903): Model->getDataSource()
+#6 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(2875): Model->_readDataSource('all', Array)
+#7 /media/sf_sandbox/CourseBuilderRemote/app/Controller/UsersController.php(266): Model->find('all')
+#8 [internal function]: UsersController->login()
+#9 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#11 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-05-16 11:04:20 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2003] Can\'t connect to MySQL server on \'texashhb.db.9821135.hostedresource.com\' (4)',
+  'enabled' => true,
+)
+Request URL: /CourseBuilderRemote/
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(3477): ConnectionManager::getDataSource('default')
+#3 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(1126): Model->setDataSource('default')
+#4 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(3499): Model->setSource('courses')
+#5 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(2903): Model->getDataSource()
+#6 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(2875): Model->_readDataSource('all', Array)
+#7 /media/sf_sandbox/CourseBuilderRemote/app/Controller/UsersController.php(266): Model->find('all')
+#8 [internal function]: UsersController->login()
+#9 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#11 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-05-16 11:04:53 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2003] Can\'t connect to MySQL server on \'texashhb.db.9821135.hostedresource.com\' (4)',
+  'enabled' => true,
+)
+Request URL: /CourseBuilderRemote/
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(3477): ConnectionManager::getDataSource('default')
+#3 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(1126): Model->setDataSource('default')
+#4 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(3499): Model->setSource('courses')
+#5 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(2903): Model->getDataSource()
+#6 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(2875): Model->_readDataSource('all', Array)
+#7 /media/sf_sandbox/CourseBuilderRemote/app/Controller/UsersController.php(266): Model->find('all')
+#8 [internal function]: UsersController->login()
+#9 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#11 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-05-16 11:11:04 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2003] Can\'t connect to MySQL server on \'texashhb.db.9821135.hostedresource.com\' (4)',
+  'enabled' => true,
+)
+Request URL: /CourseBuilderRemote/users/logout
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(3477): ConnectionManager::getDataSource('default')
+#3 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(1126): Model->setDataSource('default')
+#4 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(3499): Model->setSource('aros_acos')
+#5 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Model.php(1355): Model->getDataSource()
+#6 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Model/Permission.php(81): Model->schema()
+#7 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Component/Acl/DbAcl.php(74): Permission->check(Array, 'controllers/Use...', '*')
+#8 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Component/AclComponent.php(110): DbAcl->check(Array, 'controllers/Use...', '*')
+#9 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Component/Auth/ActionsAuthorize.php(40): AclComponent->check(Array, 'controllers/Use...')
+#10 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Component/AuthComponent.php(464): ActionsAuthorize->authorize(Array, Object(CakeRequest))
+#11 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Component/AuthComponent.php(309): AuthComponent->isAuthorized(Array)
+#12 [internal function]: AuthComponent->startup(Object(UsersController))
+#13 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Utility/ObjectCollection.php(132): call_user_func_array(Array, Array)
+#14 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#15 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#16 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#17 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(182): Controller->startupProcess()
+#18 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#19 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#20 {main}
