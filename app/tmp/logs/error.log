@@ -33561,3 +33561,47 @@ Stack Trace:
 #18 /media/sf_sandbox/CourseBuilderRemote/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
 #19 /media/sf_sandbox/CourseBuilderRemote/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #20 {main}
+2014-05-16 12:29:57 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2003] Can\'t connect to MySQL server on \'texashhb.db.9821135.hostedresource.com\' (4)',
+  'enabled' => true,
+)
+Request URL: /CourseBuilderLocal/
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Model/Model.php(3477): ConnectionManager::getDataSource('default')
+#3 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Model/Model.php(1126): Model->setDataSource('default')
+#4 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Model/Model.php(3499): Model->setSource('courses')
+#5 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Model/Model.php(2903): Model->getDataSource()
+#6 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Model/Model.php(2875): Model->_readDataSource('all', Array)
+#7 /media/sf_sandbox/CourseBuilderLocal/app/Controller/UsersController.php(266): Model->find('all')
+#8 [internal function]: UsersController->login()
+#9 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#11 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /media/sf_sandbox/CourseBuilderLocal/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-05-16 12:30:32 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2003] Can\'t connect to MySQL server on \'texashhb.db.9821135.hostedresource.com\' (4)',
+  'enabled' => true,
+)
+Request URL: /CourseBuilderLocal/
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Model/Model.php(3477): ConnectionManager::getDataSource('default')
+#3 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Model/Model.php(1126): Model->setDataSource('default')
+#4 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Model/Model.php(3499): Model->setSource('courses')
+#5 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Model/Model.php(2903): Model->getDataSource()
+#6 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Model/Model.php(2875): Model->_readDataSource('all', Array)
+#7 /media/sf_sandbox/CourseBuilderLocal/app/Controller/UsersController.php(266): Model->find('all')
+#8 [internal function]: UsersController->login()
+#9 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#11 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /media/sf_sandbox/CourseBuilderLocal/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}

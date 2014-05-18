@@ -22,7 +22,7 @@ class UsersController extends AppController {
  *
  * @return void
  */
-	public function beforeFilter() {
+public function beforeFilter() {
     parent::beforeFilter();
     $this->Auth->allow('initDB'); // We can remove this line after we're finished
 }
@@ -257,7 +257,7 @@ public function initDB() {
         }
         if ($this->Session->read('Auth.User')) {
             $this->Session->setFlash('You are logged in!');
-            return $this->redirect('/');
+            return $this->redirect(array('action' => 'dashboard', $this->Session->read('Auth.User.id')));
         };
         $this->layout = 'login';
         //Show additional data- dashboard style

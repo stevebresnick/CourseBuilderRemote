@@ -1,6 +1,6 @@
 <?php
 class DATABASE_CONFIG {
-/*
+
 	public $default = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
@@ -9,7 +9,7 @@ class DATABASE_CONFIG {
 		'password' => 'root',
 		'database' => 'texashhb',
 	);
-*/
+/*
         public $default = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
@@ -17,5 +17,6 @@ class DATABASE_CONFIG {
 		'login' => 'texashhb',
 		'password' => 'Fhao1976!',
 		'database' => 'texashhb',
-	);        
+	);     
+ * */  
 }
