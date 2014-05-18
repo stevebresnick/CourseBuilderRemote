@@ -3,7 +3,7 @@
 <?php echo $this->Html->link($course['Course']['title'], array('controller' => 'courses', 'action' => 'view', $course['Course']['id'])); ?>
 <?php $this->end();?>
 
-<?php $this->start('courses'); ?>
+<?php $this->start('course level info'); ?>
 <div class="courses form panel panel-info panel-body">
     <?php echo $this->Form->create('Course'); ?>
     <fieldset>

@@ -1,7 +1,5 @@
 <?php $this->extend('/Common/courseview'); ?>
-<?php $this->start('coursetitle'); ?>
-<?php echo $this->Html->link($course['Course']['title'], array('controller' => 'courses', 'action' => 'view', $course['Course']['id'])); ?>
-<?php $this->end(); ?>
+
 
 <?php $this->start('courseheading'); ?>
 <div class="container">
@@ -13,24 +11,13 @@
 </div>
 <?php $this->end(); ?>
 
-<?php $this->start('navigation'); ?>
-<?php echo $this->Html->div('col-md-12', $this->Html->link(__('User Dashboard'), array('controller' => 'users', 'action' => 'dashboard'), array('class' => 'btn btn-success btn-md btn-block'))); ?>
-<?php echo $this->Html->div('col-md-12', $this->Html->link(__('View Outline'), array('action' => 'outline', $course['Course']['id']), array('class' => 'btn btn-default btn-md btn-block'))); ?>
-<?php $this->end(); ?>
-
-<?php $this->start('courses'); ?>
-<div class="panel panel-info">
-    <div class="panel-heading">
-        <h3 class="panel-title"><?php echo __('Introduction'); ?></h3>
-    </div>
-    <div class="panel-body">
+<?php $this->start('course level info'); ?>
         <p><?php echo h($course['Course']['intro']); ?></p>
-        <?php if($course['Course']['master'] == null || $user['Group']['name'] == 'Admin'):?>
-        <p class="text-right"><?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $course['Course']['id']), array('class' => 'btn btn-primary btn-sm')); ?></p>
-        <?php endif;?>
-    </div>
-</div>
+                                        <?php if ($course['Course']['master'] == null || $user['Group']['name'] == 'Admin'): ?>
+                                    <p class="text-right"><?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $course['Course']['id']), array('class' => 'btn btn-primary btn-sm')); ?></p>
+                                <?php endif; ?>
 <?php $this->end(); ?>
+        
 <?php $this->start('sessions'); ?>
 <div class="panel panel-success panel-body">
     <div class="panel-body">

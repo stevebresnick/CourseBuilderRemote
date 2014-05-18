@@ -17,9 +17,6 @@
  * @since         CakePHP(tm) v 0.10.0.1076å
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-//$numberOfSections = count($course['Section']);
-//$courseTitle = $course['Course']['title'];
-//$callnumber = $course['Course']['callnumber'];
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

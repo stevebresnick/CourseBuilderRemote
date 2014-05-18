@@ -10,14 +10,13 @@ App::import('Controller', 'sections');
  */
 class CoursesController extends AppController {
 
-    /**
-     * index method
-     *
-     * @return void
-     */
+    public $user;
+    
     public function beforeFilter() {
         parent::beforeFilter();
         $this->Auth->allow('index', 'view');
+        $this->user = $this->Session->read('Auth.user');
+        $this->set('user', $this->user);
     }
 
     public function index($master = null) {

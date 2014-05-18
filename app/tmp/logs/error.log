@@ -33605,3 +33605,30 @@ Stack Trace:
 #11 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
 #12 /media/sf_sandbox/CourseBuilderLocal/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #13 {main}
+2014-05-18 10:16:45 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderLocal/assets/js/docs.min.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderLocal/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-18 10:16:45 Error: [MissingControllerException] Controller class DistController could not be found.
+Exception Attributes: array (
+  'class' => 'DistController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderLocal/dist/js/bootstrap.min.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderLocal/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-18 10:16:45 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /CourseBuilderLocal/assets/js/docs.min.js
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderLocal/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
