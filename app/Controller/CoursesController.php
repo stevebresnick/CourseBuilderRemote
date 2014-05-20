@@ -151,6 +151,8 @@ class CoursesController extends AppController {
             $courseId = (int) $this->request->params['pass'][0];
             if ($this->Course->isOwnedBy($courseId, $user['id'])) {
                 return true;
+            } elseif ($this->user['Group']['name'] == 'Admin') {
+                return true;
             }
         }
 

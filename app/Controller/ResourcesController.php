@@ -39,22 +39,10 @@ class ResourcesController extends AppController {
     public function brightcove($sectionid = NULL, $activityid = NULL) {
         $this->Resource->recursive = 2;
         $this->set('resources', $this->paginate());
-
-        //Find Courses List
-        $this->loadModel('Course');
-        $this->Course->recursive = 2;
-        $this->set('course', $this->Course->find('list'));
-
-        //Find All Sections
-        $this->loadModel('Section');
-        $this->Section->recursive = 0;
-        $this->set('section', $this->Section->find('all'));
-        $this->set('currentsection', $this->Section->findById($sectionid));
         
-        $this->loadModel('Activity');
-        $this->Activity->recursive = 2;
-        $this->set('currentactivity', $this->Activity->findById($activityid));
-
+        $this->Resource->returnBCArray($this->request->data['Brighcove']['search_query']);
+        $this->set('bcarray', $this->Resource->videos);
+        
         $this->layout = 'dashboard';
     }
 
@@ -280,4 +268,5 @@ class ResourcesController extends AppController {
             $this->redirect(array('controller'=>'activities', 'action'=>'view', $activityid));  */  
         }
     }
+    
 }

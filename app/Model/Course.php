@@ -91,5 +91,9 @@ class Course extends AppModel {
 			'finderQuery' => '',
 		)
 	);
+        
+        public function isOwnedBy($course, $user) {
+            return $this->field('id', array('id' => $course, 'user_id' => $user)) !== false;
+}
 
 }

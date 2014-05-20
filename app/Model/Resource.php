@@ -104,5 +104,18 @@ class Resource extends AppModel {
 			'insertQuery' => ''
 		)
 	);
+       
+        public $videos;
+        
+        public function returnBCArray($search) {
+            $searchquery = str_replace(' ', '%20', $search);
+            $apiendpoint = 'http://api.brightcove.com/services/library?command=search_videos&any='.$searchquery.'&page_size=100&video_fields=id%2Cname%2CshortDescription%2ClongDescription%2CvideoStillURL%2Clength&media_delivery=default&sort_by=DISPLAY_NAME%3AASC&page_number=0&get_item_count=true&callback=BCL.onSearchResponse&token=Bc_rX0PVJLx9Qis1edG-sSPth3WWA1ggjkLXHF48xgyAJtQMbpLHZg..';
+            $json = file_get_contents($apiendpoint); //{"courseintro":"This is a new description.","sessions":[null]}
+            $json2 = substr($json, 21);
+            $json = substr($json2, 0, -2);
+            $json = utf8_encode($json);
+            $bcfeed = json_decode($json, true);
+            $this->videos = $bcfeed['items'];//$bcfeed['items'];
+        }
 
 }

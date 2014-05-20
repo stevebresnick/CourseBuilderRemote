@@ -1,3 +1,41 @@
+<?php $this->start('resources');?>
+<div class="panel panel-default">
+    <div class="panel-body">
+<div class="col-md-12 form-group">
+<?php echo $this->Form->create('Brighcove', array('role' => 'form')); ?>
+<fieldset>
+    <?php echo $this->Html->div('col-md-5',$this->Form->input('search_query', array('label' => 'Enter Brightcove Search Terms:', 'class' => 'form-control')));?>
+</fieldset>
+<?php echo $this->Form->end(array('label' => 'Search', 'class' => 'form-control btn btn-xs btn-info')); ?>
+</div>
+
+<?php foreach($bcarray as $video):?>
+<div class="col-md-12 panel panel-info panel-body">
+    <div class="col-md-2">
+        <?php echo $this->Html->image($video['videoStillURL'], array('width' => '150', 'height' => '150'));?>
+    </div>
+    <div class="col-md-10">
+        <div class="col-md-12">
+            <h3 class="text-info"><?php echo $video['name'];?></h3>
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-10">
+             <p><?php echo $video['longDescription'];?></p>
+            </div>
+            <div class="col-md-2">
+                <?php echo $this->Html->link('Make Session Video');?>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endforeach;?>
+<pre>
+<?php print_r($bcarray);?>
+</pre>
+    </div>
+</div>
+<?php $this->end();?>
+
 <div class="users index">
 	<h2><?php echo __('Users'); ?></h2>
 	<table cellpadding="0" cellspacing="0">

@@ -33632,3 +33632,93 @@ Request URL: /CourseBuilderLocal/assets/js/docs.min.js
 Stack Trace:
 #0 /media/sf_sandbox/CourseBuilderLocal/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-05-19 17:14:40 Error: Fatal Error (64): Cannot redeclare ResourcesController::brightcove() in [/media/sf_sandbox/CourseBuilderLocal/app/Controller/ResourcesController.php, line 284]
+2014-05-19 17:14:41 Error: [FatalErrorException] Cannot redeclare ResourcesController::brightcove()
+Request URL: /CourseBuilderLocal/resources/brightcove
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', '/media/sf_sandb...', 284)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', '/media/sf_sandb...', 284, Array)
+#2 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', '/media/sf_sandb...', 284, Array)
+#3 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-05-19 17:15:30 Error: Fatal Error (64): Cannot redeclare ResourcesController::brightcove() in [/media/sf_sandbox/CourseBuilderLocal/app/Controller/ResourcesController.php, line 284]
+2014-05-19 17:15:30 Error: [FatalErrorException] Cannot redeclare ResourcesController::brightcove()
+Request URL: /CourseBuilderLocal/resources/brightcove
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', '/media/sf_sandb...', 284)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', '/media/sf_sandb...', 284, Array)
+#2 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', '/media/sf_sandb...', 284, Array)
+#3 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-05-19 17:26:55 Error: Fatal Error (1): Call to undefined function getVideos() in [/media/sf_sandbox/CourseBuilderLocal/app/Model/Resource.php, line 120]
+2014-05-19 17:26:56 Error: [FatalErrorException] Call to undefined function getVideos()
+Request URL: /CourseBuilderLocal/resources/brightcove
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/media/sf_sandb...', 120)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/media/sf_sandb...', 120, Array)
+#2 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/media/sf_sandb...', 120, Array)
+#3 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-05-19 17:28:52 Error: Fatal Error (1): Call to undefined function getVideos() in [/media/sf_sandbox/CourseBuilderLocal/app/Model/Resource.php, line 120]
+2014-05-19 17:28:52 Error: [FatalErrorException] Call to undefined function getVideos()
+Request URL: /CourseBuilderLocal/resources/brightcove
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/media/sf_sandb...', 120)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/media/sf_sandb...', 120, Array)
+#2 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/media/sf_sandb...', 120, Array)
+#3 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-05-19 22:13:33 Error: Fatal Error (1): Call to undefined method SessionComponent::set() in [/media/sf_sandbox/CourseBuilderLocal/app/Controller/ResourcesController.php, line 45]
+2014-05-19 22:13:33 Error: [FatalErrorException] Call to undefined method SessionComponent::set()
+Request URL: /CourseBuilderLocal/resources/brightcove
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/media/sf_sandb...', 45)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/media/sf_sandb...', 45, Array)
+#2 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/media/sf_sandb...', 45, Array)
+#3 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-05-19 22:13:54 Error: Fatal Error (1): Call to a member function set() on a non-object in [/media/sf_sandbox/CourseBuilderLocal/app/Controller/ResourcesController.php, line 45]
+2014-05-19 22:13:54 Error: [FatalErrorException] Call to a member function set() on a non-object
+Request URL: /CourseBuilderLocal/resources/brightcove
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/media/sf_sandb...', 45)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/media/sf_sandb...', 45, Array)
+#2 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/media/sf_sandb...', 45, Array)
+#3 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-05-19 22:18:52 Error: Fatal Error (1): Call to a member function set() on a non-object in [/media/sf_sandbox/CourseBuilderLocal/app/Controller/ResourcesController.php, line 45]
+2014-05-19 22:18:52 Error: [FatalErrorException] Call to a member function set() on a non-object
+Request URL: /CourseBuilderLocal/resources/brightcove
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/media/sf_sandb...', 45)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/media/sf_sandb...', 45, Array)
+#2 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/media/sf_sandb...', 45, Array)
+#3 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-05-20 10:12:36 Error: Fatal Error (4): syntax error, unexpected '/' in [/media/sf_sandbox/CourseBuilderLocal/app/View/Resources/brightcove.ctp, line 14]
+2014-05-20 10:12:36 Error: [FatalErrorException] syntax error, unexpected '/'
+Request URL: /CourseBuilderLocal/resources/brightcove
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/media/sf_sandb...', 14)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/media/sf_sandb...', 14, Array)
+#2 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/media/sf_sandb...', 14, Array)
+#3 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-05-20 10:25:29 Error: Fatal Error (4): syntax error, unexpected '<' in [/media/sf_sandbox/CourseBuilderLocal/app/View/Resources/brightcove.ctp, line 25]
+2014-05-20 10:25:29 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /CourseBuilderLocal/resources/brightcove
+Stack Trace:
+#0 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/media/sf_sandb...', 25)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/media/sf_sandb...', 25, Array)
+#2 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/media/sf_sandb...', 25, Array)
+#3 /media/sf_sandbox/CourseBuilderLocal/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
